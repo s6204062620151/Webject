@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import style from './App.module.css';
 import Navbar from './Components/Navbar';
-
 import Home from './Components/Home';
 import Status from './Components/Status';
 import Cart from './Components/Cart';
@@ -21,7 +20,7 @@ function App() {
           <Route path="/Status" Component={Status}/>
           <Route path="/Cart" Component={Cart}/>
           <Route path="/Signin" Component={Signin}/>
-          <Route path="/Signup" Component={Signin}/>
+          <Route path="/Signup" Component={Signup}/>
           <Route path="/categ1" Component={Category1}/>
           <Route path="/categ2" Component={Category2}/>
           <Route path="/categ3" Component={Category3}/>
