@@ -10,6 +10,8 @@ import Signup from './Components/SignUp';
 import Category1 from './Components/Category1';
 import Category2 from './Components/Category2';
 import Category3 from './Components/Category3';
+import Footer from './Components/Footer';
+import Shopdetail from './Components/Shopdetail';
 
 function App() {
   return (
@@ -25,8 +27,10 @@ function App() {
           <Route path="/categ1" Component={Category1}/>
           <Route path="/categ2" Component={Category2}/>
           <Route path="/categ3" Component={Category3}/>
+          <Route path="/Shopdetail" Component={Shopdetail}/>
         </Routes>
       </div>
+      <div className={style.footer}><Footer/></div>
     </div>
   );
 }
