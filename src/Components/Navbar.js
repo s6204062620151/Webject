@@ -16,7 +16,12 @@ function Navbar() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/Status">Status</Link></li>
             <li><Link to="/Cart">Cart</Link></li>
-            <li><Link to="/SignIn">Sign In | Sign Up</Link></li>
+            <div className={style.accountmanage}>
+              <li>
+                <Link to="/Signin">Sign In</Link>
+                <Link to="/Signup">| Sign Up</Link>
+              </li>
+            </div>
         </ul>
         {isOpen && (
           <ul className={style.dropdownmenu}>
