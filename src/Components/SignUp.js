@@ -1,46 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from './signup.module.css';
 
-
 const SignUp = () => {
-  const submit = (e) => {
-    e.preventDefault();
-    try{
-      var email = document.getElementById("signup-email").value
-      var name = document.getElementById("signup-name").value
-      var surname = document.getElementById("signup-surname").value
-      var password = document.getElementById("signup-password").value
-      var confirmpassword = document.getElementById("signup-confirmpassword").value
-      var phonenumber = document.getElementById("signup-phonenumber").value
-      var housenumber = document.getElementById("signup-housenumber").value
-      var province = document.getElementById("signup-province").value
-      var city = document.getElementById("signup-city").value
-      var district = document.getElementById("signup-district").value
-      var zipcode = document.getElementById("signup-zipcode").value
+  const [inputName, setinputName] = useState('')
+  const [inputSurname, setinputSurname] = useState('')
+  const [inputEmail, setinputEmail] = useState('')
+  const [inputPhone, setinputPhone] = useState('')
+  const [inputPassword, setinputPassword] = useState('')
+  const [inputCPassword, setinputCPassword] = useState('')
+  const [inputHousenumber, setinputHousenumber] = useState('')
+  const [inputProvince, setinputProvince] = useState('')
+  const [inputCity, setinputCity] = useState('')
+  const [inputDistrict, setinputDistrict] = useState('')
+  const [inputZipcode, setinputZipcode] = useState('')
 
-      var data = {"email" : email}
-      var name ={"name" : name}
-      var surname = {"surname" : surname}
-      var password = {"password" : password}
-      var confirmpassword = {"confirmpassword" : confirmpassword}
-      var phonenumber = {"phonenumber" : phonenumber}
-      var housenumber = {"housenumber" : housenumber}
-      var province = {"province" : province}
-      var city = {"city" : city}
-      var district = {"district" : district}
-      var zipcode = {"zipcode" : zipcode}
-    
-      console.log(data)
-      console.log(name)
-      console.log(surname)
-      console.log(password)
-      console.log(confirmpassword)
-      console.log(phonenumber)
-      console.log(housenumber)
-      console.log(province)
-      console.log(city)
-      console.log(district)
-      console.log(zipcode)
+  const submit = async (e) => {
+    e.preventDefault();
+
+    var password
+    if(inputPassword===inputCPassword){
+      password = inputPassword
+    }
+
+    const inputData = {
+      "name": inputName+' '+inputSurname,
+      "email": inputEmail,
+      "password": password,
+      "phone_number": inputPhone,
+      "address": inputHousenumber+'/'+inputProvince+'/'+inputCity+'/'+inputDistrict+'/'+inputZipcode,
+    }
+    // console.log(inputData)
+    try{
+      const response = await fetch('http://127.0.0.1:8000/api/signuppost', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(inputData),
+      });
+      if (response.ok) {
+        // Handle success, e.g., show a success message to the user
+        console.log('Data sent successfully');
+      } else {
+        console.log(response.text())
+        // Handle errors, e.g., show an error message to the user
+        console.error('Error sending data');
+      }
     }
     catch (error) {
       console.log(error)
@@ -57,8 +62,11 @@ const SignUp = () => {
               type="text" 
               id="signup-name" 
               pattern='[A-Z]{1}[a-z]+' 
-              title='' 
-              placeholder='ขึ้นต้นด้วยตัวพิมพ์ใหญ่'/>
+              title=''
+              placeholder='ขึ้นต้นด้วยตัวพิมพ์ใหญ่'
+              required
+              value={inputName}
+              onChange={(e) => setinputName(e.target.value)}/>
           </div>
           <div>
             <div>Email</div>
@@ -66,9 +74,11 @@ const SignUp = () => {
               type="email" 
               id="signup-email" 
               pattern='[0-9a-z_]+@(gmail|hotmail|outlook)(\.com|\.co.th)' 
-              required 
               title='' 
-              placeholder='@gmail.com' />
+              placeholder='@gmail.com'
+              required 
+              value={inputEmail}
+              onChange={(e) => setinputEmail(e.target.value)}/>
           </div>
           <div>
             <div>Password</div>
@@ -77,21 +87,27 @@ const SignUp = () => {
               id="signup-password" 
               pattern='[a-z]{4}[0-9]{4}' 
               title='' 
-              placeholder='a-z จำนวน 4 ตัว และตัวเลข 4 ตัว'/>
+              placeholder='a-z จำนวน 4 ตัว และตัวเลข 4 ตัว'
+              value={inputPassword}
+              onChange={(e) => setinputPassword(e.target.value)}/>
           </div>
           <div>
             <div>House number</div>
             <input 
               type="text" 
               id="signup-housenumber" 
-              pattern='^[02][0-9]{8}' 
-              placeholder='start with 02' />
+              pattern='^[02][0-9]{3}' 
+              placeholder='start with 02' 
+              value={inputHousenumber}
+              onChange={(e) => setinputHousenumber(e.target.value)}/>
           </div>
           <div>
             <div>City</div>
             <input 
               type="text" 
-              id="signup-city"/>
+              id="signup-city"
+              value={inputCity}
+              onChange={(e) => setinputCity(e.target.value)}/>
           </div>
           <div>
             <div>zip code</div>
@@ -100,7 +116,9 @@ const SignUp = () => {
               id="signup-zipcode" 
               pattern='[0-9]{4}' 
               title='' 
-              placeholder='ตัวเลข 4 ตัว' />
+              placeholder='ตัวเลข 4 ตัว' 
+              value={inputZipcode}
+              onChange={(e) => setinputZipcode(e.target.value)}/>
           </div> 
         </div>
         <div className={style.signupcontainer}>
@@ -111,7 +129,9 @@ const SignUp = () => {
               id="signup-surname" 
               pattern='^[A-Z]{1}[a-z]+' 
               title='' 
-              placeholder='ขึ้นต้นด้วยตัวพิมพ์ใหญ่' />
+              placeholder='ขึ้นต้นด้วยตัวพิมพ์ใหญ่' 
+              value={inputSurname}
+              onChange={(e) => setinputSurname(e.target.value)}/>
           </div>
           <div>
             <div>Phone number</div>
@@ -120,31 +140,39 @@ const SignUp = () => {
               id="signup-phonenumber" 
               pattern='[0-9]{10}' 
               title='' 
-              placeholder='ตัวเลข 10 ตัว'/>
+              placeholder='ตัวเลข 10 ตัว'
+              value={inputPhone}
+              onChange={(e) => setinputPhone(e.target.value)}/>
           </div>
           <div>
             <div>Confirm password</div>
             <input 
               type="password" 
               id="signup-confirmpassword" 
-              placeholder='a-z จำนวน 4 ตัว และตัวเลข 4 ตัว'/>
+              placeholder='a-z จำนวน 4 ตัว และตัวเลข 4 ตัว'
+              value={inputCPassword}
+              onChange={(e) => setinputCPassword(e.target.value)}/>
           </div>
           <div>
             <div>Province</div>
             <input 
               type="text" 
-              id="signup-province"/>
+              id="signup-province"
+              value={inputProvince}
+              onChange={(e) => setinputProvince(e.target.value)}/>
           </div>
           <div>
             <div>District</div>
             <input 
               type="text" 
-              id="signup-district"/>
+              id="signup-district"
+              value={inputDistrict}
+              onChange={(e) => setinputDistrict(e.target.value)}/>
           </div>
         </div>
       </div>
       <div className={style.btncontainer}>
-        <button>SignUp</button>
+        <button type='submit'>SignUp</button>
       </div>
 
       <div></div>
