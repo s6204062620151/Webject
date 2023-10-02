@@ -29,6 +29,7 @@ function App() {
           <Route path="/Shopdetail" Component={Shopdetail}/>
         </Routes>
       </div>
+      
       <div className={style.footer}><Footer/></div>
     </div>
   );
