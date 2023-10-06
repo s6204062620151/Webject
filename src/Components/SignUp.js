@@ -14,7 +14,7 @@ const SignUp = () => {
   const [city, setCity] = useState('')
   const [district, setDistrict] = useState('')
   const [zipcode, setZipcode] = useState('')
-
+  
   const submit = async (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/signup',{
@@ -25,8 +25,8 @@ const SignUp = () => {
       address: housenumber+'/'+province+'/'+city+'/'+district+'/'+zipcode,
       role: 'user'
     })
-
   }
+  
   return (
     <form id='signup' className={style.signupform} onSubmit={submit}>
       <div className={style.signuptopic}>SignUp</div>
@@ -150,11 +150,8 @@ const SignUp = () => {
       <div className={style.btncontainer}>
         <button type='submit'>SignUp</button>
       </div>
-
-      <div></div>
     </form>
   )
 }
-
 
 export default SignUp

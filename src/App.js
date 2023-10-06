@@ -6,11 +6,11 @@ import Status from './Components/Status';
 import Cart from './Components/Cart';
 import Signin from './Components/SignIn';
 import Signup from './Components/SignUp';
-import Category1 from './Components/Category1';
-import Category2 from './Components/Category2';
-import Category3 from './Components/Category3';
-import Footer from './Components/Footer';
-import Shopdetail from './Components/Shopdetail';
+
+import Category1 from './Components/Category/Category1';
+import Category2 from './Components/Category/Category2';
+import Category3 from './Components/Category/Category3';
+import { Layout } from './Components/Layout';
 
 function App() {
   return (
@@ -18,7 +18,8 @@ function App() {
       <div className={style.navbar}><Navbar/></div>
       <div className={style.content}>
         <Routes>
-          <Route path="/" Component={Home}/>
+          <Route path="/" Component={Layout}/>
+          <Route index Component={Home}/>
           <Route path="/Status" Component={Status}/>
           <Route path="/Cart" Component={Cart}/>
           <Route path="/Signin" Component={Signin}/>

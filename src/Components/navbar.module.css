@@ -46,11 +46,14 @@ nav{
     left: -2.4rem;
 }
 
+.img {
+    width: 2rem;
+    height: 2rem;
+}
+
 .accountmanage{
     display: flex;
 }
-
-
 
 @media screen and (min-width: 768px) {
     .Navmenu li{
