@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import style from './navbar.module.css'
+import logo from './Image/logo.jpg'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +12,7 @@ function Navbar() {
     <nav>
         <ul className={style.Navmenu}>
             <li className={style.categoryMenu} onClick={toggleDropdown}>
+            {/* <img src={logo} className={style.img}></img> */}
                 categories
             </li>
             <li><Link to="/">Home</Link></li>
