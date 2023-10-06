@@ -1,115 +1,157 @@
-import React from 'react'
-import style from './style.module.css'
+import React, { useState } from 'react'
+import style from './signup.module.css';
+import axios from 'axios'
 
 const SignUp = () => {
-  const submit = (e) => {
+  const [name, setName] = useState('')
+  const [surname, setSurname] = useState('')
+  const [email, setEmail] = useState('')
+  const [phonenumber, setPhonenumber] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmpassword, setConfirmpassword] = useState('')
+  const [housenumber, setHousenumber] = useState('')
+  const [province, setProvince] = useState('')
+  const [city, setCity] = useState('')
+  const [district, setDistrict] = useState('')
+  const [zipcode, setZipcode] = useState('')
+  
+  const submit = async (e) => {
     e.preventDefault();
-    try{
-      var email = document.getElementById("signup-email").value
-      var name = document.getElementById("signup-name").value
-      var surname = document.getElementById("signup-surname").value
-      var password = document.getElementById("signup-password").value
-      var confirmpassword = document.getElementById("signup-confirmpassword").value
-      var phonenumber = document.getElementById("signup-phonenumber").value
-      var housenumber = document.getElementById("signup-housenumber").value
-      var province = document.getElementById("signup-province").value
-      var city = document.getElementById("signup-city").value
-      var district = document.getElementById("signup-district").value
-      var zipcode = document.getElementById("signup-zipcode").value
-
-      var data = {
-        "email": email,
-        "name": name,
-        "surname": surname,
-        
-      }
-      var data = {"email" : email}
-      var name ={"name" : name}
-      var surname = {"surname" : surname}
-      var password = {"password" : password}
-      var confirmpassword = {"confirmpassword" : confirmpassword}
-      var phonenumber = {"phonenumber" : phonenumber}
-      var housenumber = {"housenumber" : housenumber}
-      var province = {"province" : province}
-      var city = {"city" : city}
-      var district = {"district" : district}
-      var zipcode = {"zipcode" : zipcode}
-    
-      console.log(data)
-      console.log(name)
-      console.log(surname)
-      console.log(password)
-      console.log(confirmpassword)
-      console.log(phonenumber)
-      console.log(housenumber)
-      console.log(province)
-      console.log(city)
-      console.log(district)
-      console.log(zipcode)
-    }
-    catch (error) {
-      console.log(error)
-    }
+    axios.post('http://localhost:3001/signup',{
+      email: email,
+      password: password,
+      name: name+' '+surname,
+      phone_number: phonenumber,
+      address: housenumber+'/'+province+'/'+city+'/'+district+'/'+zipcode,
+      role: 'user'
+    })
   }
+  
   return (
     <form id='signup' className={style.signupform} onSubmit={submit}>
       <div className={style.signuptopic}>SignUp</div>
       <div className={style.signup}>
         <div className={style.signupcontainer}>
-          <div className={style.signupcomponent}>
+          <div>
             <div>Name</div>
-            <input className={style.signupinput} type="text" id="signup-name" pattern='[A-Z]{1}[a-z]+' title='' placeholder='ขึ้นต้นด้วยตัวพิมพ์ใหญ่'/>
+            <input 
+              type="text" 
+              id="signup-name" 
+              pattern='[A-Z]{1}[a-z]+' 
+              title=''
+              placeholder='ขึ้นต้นด้วยตัวพิมพ์ใหญ่'
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}/>
           </div>
-          <div className={style.signupcomponent}>
+          <div>
             <div>Email</div>
-            <input className={style.signupinput} type="email" id="signup-email" pattern='[0-9a-z_]+@(gmail|hotmail|outlook)(\.com|\.co.th)' required title='' placeholder='@gmail.com' />
+            <input 
+              type="email" 
+              id="signup-email" 
+              pattern='[0-9a-z_]+@(gmail|hotmail|outlook)(\.com|\.co.th)' 
+              title='' 
+              placeholder='@gmail.com'
+              required 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}/>
           </div>
-          <div className={style.signupcomponent}>
+          <div>
             <div>Password</div>
-            <input className={style.signupinput} type="password" id="signup-password" pattern='[a-z]{4}[0-9]{4}' title='' placeholder='a-z จำนวน 4 ตัว และตัวเลข 4 ตัว'/>
+            <input 
+              type="password" 
+              id="signup-password" 
+              pattern='[a-z]{4}[0-9]{4}' 
+              title='' 
+              placeholder='a-z จำนวน 4 ตัว และตัวเลข 4 ตัว'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}/>
           </div>
-          <div className={style.signupcomponent}>
+          <div>
             <div>House number</div>
-            <input className={style.signupinput} type="text" id="signup-housenumber" pattern='^[02][0-9]{8}' placeholder='start with 02' />
+            <input 
+              type="text" 
+              id="signup-housenumber" 
+              pattern='^[0-9]{3,10}' 
+              placeholder='start with 02' 
+              value={housenumber}
+              onChange={(e) => setHousenumber(e.target.value)}/>
           </div>
-          <div className={style.signupcomponent}>
+          <div>
             <div>City</div>
-            <input className={style.signupinput} type="text" id="signup-city"/>
+            <input 
+              type="text" 
+              id="signup-city"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}/>
           </div>
-          <div className={style.signupcomponent}>
+          <div>
             <div>zip code</div>
-            <input className={style.signupinput} type="text" id="signup-zipcode" pattern='[0-9]{4}' title='' placeholder='ตัวเลข 4 ตัว' />
+            <input 
+              type="text" 
+              id="signup-zipcode" 
+              pattern='[0-9]{4}' 
+              title='' 
+              placeholder='ตัวเลข 4 ตัว' 
+              value={zipcode}
+              onChange={(e) => setZipcode(e.target.value)}/>
           </div> 
         </div>
         <div className={style.signupcontainer}>
-          <div className={style.signupcomponent}>
+          <div>
             <div>Surname</div>
-            <input className={style.signupinput} type="text" id="signup-surname" pattern='^[A-Z]{1}[a-z]+' title='' placeholder='ขึ้นต้นด้วยตัวพิมพ์ใหญ่' />
+            <input 
+              type="text" 
+              id="signup-surname" 
+              pattern='^[A-Z]{1}[a-z]+' 
+              title='' 
+              placeholder='ขึ้นต้นด้วยตัวพิมพ์ใหญ่' 
+              value={surname}
+              onChange={(e) => setSurname(e.target.value)}/>
           </div>
-          <div className={style.signupcomponent}>
+          <div>
             <div>Phone number</div>
-            <input className={style.signupinput} type="text" id="signup-phonenumber" pattern='[0-9]{10}' title='' placeholder='ตัวเลข 10 ตัว'/>
+            <input 
+              type="text" 
+              id="signup-phonenumber" 
+              pattern='[0-9]{10}' 
+              title='' 
+              placeholder='ตัวเลข 10 ตัว'
+              value={phonenumber}
+              onChange={(e) => setPhonenumber(e.target.value)}/>
           </div>
-          <div className={style.signupcomponent}>
+          <div>
             <div>Confirm password</div>
-            <input className={style.signupinput} type="password" id="signup-confirmpassword" placeholder='a-z จำนวน 4 ตัว และตัวเลข 4 ตัว'/>
+            <input 
+              type="password" 
+              id="signup-confirmpassword" 
+              placeholder='a-z จำนวน 4 ตัว และตัวเลข 4 ตัว'
+              value={confirmpassword}
+              onChange={(e) => setConfirmpassword(e.target.value)}/>
           </div>
-          <div className={style.signupcomponent}>
+          <div>
             <div>Province</div>
-            <input className={style.signupinput} type="text" id="signup-province"/>
+            <input 
+              type="text" 
+              id="signup-province"
+              value={province}
+              onChange={(e) => setProvince(e.target.value)}/>
           </div>
-          <div className={style.signupcomponent}>
+          <div>
             <div>District</div>
-            <input className={style.signupinput} type="text" id="signup-district"/>
+            <input 
+              type="text" 
+              id="signup-district"
+              value={district}
+              onChange={(e) => setDistrict(e.target.value)}/>
           </div>
         </div>
       </div>
       <div className={style.btncontainer}>
-        <button>SignUp</button>
+        <button type='submit'>SignUp</button>
       </div>
     </form>
   )
 }
-
 
 export default SignUp

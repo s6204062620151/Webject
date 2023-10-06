@@ -1,18 +1,66 @@
-import React from 'react'
-import style from './style.module.css'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import style from './signin.module.css';
+import axios from 'axios'
 
 function SignIn() {
-  return (
-    <div>
-      <form id='signin'>
-        <label>SignIn</label>
-        <label>Username</label>
-        <input type="text" id="username" placeholder='@email.com'/>
-        <label>Password</label>
-        <input type="password" id="password"/>
 
-        <input type="submit" id="submit"/>
-      </form>
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  axios.defaults.withCredentials = true;
+  const SignIn = async (e) =>{
+    e.preventDefault();
+    
+    try{
+      const response = await axios.post('http://localhost:3001/signin', {
+        email: email,
+        password: password
+      })
+      console.log(response.data.token);
+      console.log(response.data.exp);
+      if(response.data.message === "SignIn Successful!"){
+        //console.log(1)
+        //localStorage.setItem('token', response.data.token);
+        //console.log(2)
+        alert(response.data.message);
+        window.location.href = '/';
+      }
+      else{
+        alert(response.data.message);
+      }
+    } catch(err){
+      console.log(err);
+    }
+  }
+
+  return (
+    <div className={style.container}>
+      <label className={style.title}>Sign In</label>
+      <form className={style.inputForm}>
+        <div className={style.inputemail}>
+          <label>Email :</label>
+          <input
+            type='text'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className={style.inputpassword}>
+          <label>Password :</label>
+          <input
+            type='password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button className={style.signinbtn} onClick={SignIn}>Sign in</button>
+      </form><br/>
+      <div className={style.signupref}>
+        You don't have an account yet?
+        <Link to="/SignUp">sign up</Link>
+      </div>
+
     </div>
   )
 }

@@ -4,12 +4,12 @@
     margin: 10px;
 }
 
-.signup-topic {
+.signuptopic {
     margin: 10px;
     text-align: center;
 }
 
-.signup-form {
+.signupform {
     padding: auto;
     background-color: rgb(238, 238, 238);
     border-radius: 5px;
@@ -18,18 +18,18 @@
 label {
     text-align: center;
 }
-.signup-component {
+.signupcontainer > div {
     margin: 10px;
     padding: 6px;
     border: 1px black solid;
     border-radius: 4px;
 }
 
-.signup-container {
+.signupcontainer {
     margin: 3px;
 }
 
-.signup-component, .signup-input  {
+.signup-component, .signupcontainer div > input  {
     background-color: rgb(209, 209, 209);
 }
 
@@ -43,7 +43,7 @@ label {
     border: none;
 }
 
-button {
+.btncontainer button {
     background-color: rgb(27, 98, 139);
     border: none;
     color: white;
@@ -54,7 +54,7 @@ button {
     cursor: pointer;
 }
 
-.btn-container {
+.btncontainer {
     display: flex;
     justify-content: center;
 }

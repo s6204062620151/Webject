@@ -2,12 +2,18 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import style from './navbar.module.css'
 import logo from './Image/logo.jpg'
+import Account from './Account';
+import { useCookies } from 'react-cookie';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [cookies] = useCookies(['token']);
+
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
+
+    const isSignin = !!cookies.token;
   return (
     <nav>
         <ul className={style.Navmenu}>
@@ -18,7 +24,17 @@ function Navbar() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/Status">Status</Link></li>
             <li><Link to="/Cart">Cart</Link></li>
-            <li><Link to="/SignIn">Sign In</Link> <Link to="/SignUp"> | Sign Up</Link></li>
+            <div className={style.accountmanage}>
+              {isSignin ? (
+                <li><Account/></li>
+              ) : (
+              <li>
+                <Link to="/Signin">Sign In</Link>
+                <Link to="/Signup">| Sign Up</Link>
+              </li>
+              )}
+            </div>
+            
         </ul>
         {isOpen && (
           <ul className={style.dropdownmenu}>
@@ -27,6 +43,7 @@ function Navbar() {
             <li><Link to="/categ3">Category3</Link></li>
           </ul>
         )}
+        
     </nav>
   )
 }

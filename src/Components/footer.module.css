@@ -1,0 +1,45 @@
+.container{
+    background-color: #222E3F;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+.container > div {
+    margin-right: 1rem;
+}
+
+.firstcolumn .title > div , .firstcolumn .contractinfo > div{
+    font-weight: bold;
+    color: white;
+    font-size: 0.625rem;
+}
+.secondcolumn .footnav > ul ,.thirdcolumn .accountnav > ul {
+    list-style: none;
+    font-weight: bold;
+    color: white;
+}
+.secondcolumn .footnav .navigation > li a , 
+.thirdcolumn .accountnav .navigation > li a { 
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.625rem;
+}
+.secondcolumn .footnav > ul, .thirdcolumn .accountnav > ul{
+    padding-left: 0;
+}
+.forthcolumn .socialmedia{
+    display: block;
+}
+.forthcolumn .title,
+.forthcolumn .socialmedia div > a{
+    color: white;
+    font-weight: bold;
+}
+.firstcolumn,.forthcolumn{
+    margin-top: 1rem;
+}
+
+.firstcolumn .contractinfo{
+    margin-top: 4rem;
+}
