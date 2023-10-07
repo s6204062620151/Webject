@@ -14,18 +14,31 @@ const SignUp = () => {
   const [city, setCity] = useState('')
   const [district, setDistrict] = useState('')
   const [zipcode, setZipcode] = useState('')
+  const [message, setMessage] = useState('')
 
   const submit = async (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/signup',{
-      email: email,
-      password: password,
-      name: name+' '+surname,
-      phone_number: phonenumber,
-      address: housenumber+'/'+province+'/'+city+'/'+district+'/'+zipcode,
-      role: 'user'
-    })
 
+    try{
+      const response = await axios.post('http://localhost:3001/signup',{
+        email: email,
+        password: password,
+        name: name+' '+surname,
+        phone_number: phonenumber,
+        address: housenumber+'/'+province+'/'+city+'/'+district+'/'+zipcode,
+        role: 'user'
+      });
+      console.log(response.data.message);
+      if(response.data.message === "Signup Success!"){
+        setMessage(response.data.message);
+      }
+      else{
+        setMessage("Signup failed");
+      }
+    }
+    catch(err){
+      console.log(err);
+    }
   }
   return (
     <form id='signup' className={style.signupform} onSubmit={submit}>
@@ -151,7 +164,7 @@ const SignUp = () => {
         <button type='submit'>SignUp</button>
       </div>
 
-      <div></div>
+      <div className={style.message}>{message}</div>
     </form>
   )
 }

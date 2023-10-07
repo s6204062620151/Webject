@@ -11,10 +11,12 @@ import Category2 from './Components/Category2';
 import Category3 from './Components/Category3';
 import Footer from './Components/Footer';
 import Shopdetail from './Components/Shopdetail';
+import Searchbar from './Components/Searchbar';
 
 function App() {
   return (
     <div className={style.container}>
+      <div className={style.searchbar}><Searchbar/></div>
       <div className={style.navbar}><Navbar/></div>
       <div className={style.content}>
         <Routes>
