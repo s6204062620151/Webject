@@ -1,17 +1,19 @@
 import { Route, Routes } from 'react-router-dom';
 import style from './App.module.css';
 import Navbar from './Components/Navbar';
+import Searchbar from './Components/Searchbar'
 import Home from './Components/Home';
 import Status from './Components/Status';
+import Shopdetail from './Components/Shopdetail';
 import Cart from './Components/Cart';
 import Signin from './Components/SignIn';
 import Signup from './Components/SignUp';
-import Category1 from './Components/Category1';
-import Category2 from './Components/Category2';
-import Category3 from './Components/Category3';
 import Footer from './Components/Footer';
-import Shopdetail from './Components/Shopdetail';
-import Searchbar from './Components/Searchbar';
+
+import Dress from './Components/Category/Dress';
+import Pajamas from './Components/Category/Pajamas';
+import Hoddie from './Components/Category/Hoddie';
+import Legging from './Components/Category/Legging';
 
 function App() {
   return (
@@ -25,9 +27,10 @@ function App() {
           <Route path="/Cart" Component={Cart}/>
           <Route path="/Signin" Component={Signin}/>
           <Route path="/Signup" Component={Signup}/>
-          <Route path="/categ1" Component={Category1}/>
-          <Route path="/categ2" Component={Category2}/>
-          <Route path="/categ3" Component={Category3}/>
+          <Route path="/dress" Component={Dress}/>
+          <Route path="/pajamas" Component={Pajamas}/>
+          <Route path="/hoddie" Component={Hoddie}/>
+          <Route path="/legging" Component={Legging}/>
           <Route path="/Shopdetail" Component={Shopdetail}/>
         </Routes>
       </div>

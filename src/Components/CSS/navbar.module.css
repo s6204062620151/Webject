@@ -16,12 +16,18 @@ nav{
     font-weight: bold;
     font-size: 0.625rem;
 }
+.navlink{
+    display: flex;
+    margin-left: 1.25rem;
+}
 
 .Navmenu .categoryMenu{
+    display: flex;
     margin: 0rem;
     color: white;
     background-color: #1B1B45;
-    padding: 1.875rem .938rem;
+    padding: 1.5rem .625rem;
+    position: absolute;
 }
 
 .dropdownmenu li{
@@ -35,22 +41,20 @@ nav{
     text-decoration: none;
 }
 
-.categoryMenu{
-    position: absolute;
-    left: 0;
-}
-
 .dropdownmenu{
     position: absolute;
-    top: 4.7rem;
-    left: -2.4rem;
+    top: rem;
+}
+
+.logo {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: .375rem;
 }
 
 .accountmanage{
     display: flex;
 }
-
-
 
 @media screen and (min-width: 768px) {
     .Navmenu li{
@@ -59,11 +63,6 @@ nav{
 
     .Navmenu li, .Navmenu li > a{
         font-size: 0.813rem;
-    }
-
-    .Navmenu .categoryMenu{
-        padding-left: 1.876rem;
-        padding-right: 1.876rem;
     }
 
     .dropdownmenu{
@@ -78,11 +77,6 @@ nav{
 
     .Navmenu li, .Navmenu li > a{
         font-size: 0.813rem;
-    }
-
-    .Navmenu .categoryMenu{
-        padding-left: 1.876rem;
-        padding-right: 1.876rem;
     }
 
     .dropdownmenu{

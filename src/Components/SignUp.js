@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import style from './signup.module.css';
+import style from './CSS/signup.module.css';
 import axios from 'axios'
 
 const SignUp = () => {
@@ -168,6 +168,5 @@ const SignUp = () => {
     </form>
   )
 }
-
 
 export default SignUp
