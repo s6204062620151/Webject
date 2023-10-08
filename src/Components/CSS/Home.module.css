@@ -1,0 +1,43 @@
+.topSell{
+    display: flex;
+    justify-content: center;
+    width: 25rem;
+    height: 18rem;
+}
+
+.topSell .bestsell {
+    width: 80%;
+    height: 80%;
+    margin-right: 0.625rem;
+}
+
+.bestsell img{
+    width: 100%;
+    height: 100%;
+}
+
+.bestsell .labelname{
+    font-size: 0.625rem;
+    font-weight: bold;
+}
+
+.categories{
+    width: 25rem;
+    height: 30rem;
+}
+
+.categories .categorybar .categoryChoice{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+}
+
+.categorybar{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.categoryChoice img{
+    width: 60%;
+    height: 80%;
+}

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
-import style from './account.module.css';
+import style from './CSS/account.module.css';
 
 function Account() {
   const [auth, setAuth] = useState(false);

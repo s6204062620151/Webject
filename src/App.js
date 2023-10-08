@@ -1,32 +1,36 @@
 import { Route, Routes } from 'react-router-dom';
 import style from './App.module.css';
 import Navbar from './Components/Navbar';
+import Searchbar from './Components/Searchbar'
 import Home from './Components/Home';
 import Status from './Components/Status';
+import Shopdetail from './Components/Shopdetail';
 import Cart from './Components/Cart';
 import Signin from './Components/SignIn';
 import Signup from './Components/SignUp';
+import Footer from './Components/Footer';
 
-import Category1 from './Components/Category/Category1';
-import Category2 from './Components/Category/Category2';
-import Category3 from './Components/Category/Category3';
-import { Layout } from './Components/Layout';
+import Dress from './Components/Category/Dress';
+import Pajamas from './Components/Category/Pajamas';
+import Hoddie from './Components/Category/Hoddie';
+import Legging from './Components/Category/Legging';
 
 function App() {
   return (
     <div className={style.container}>
+      <div className={style.searchbar}><Searchbar/></div>
       <div className={style.navbar}><Navbar/></div>
       <div className={style.content}>
         <Routes>
-          <Route path="/" Component={Layout}/>
-          <Route index Component={Home}/>
+          <Route path="/" Component={Home}/>
           <Route path="/Status" Component={Status}/>
           <Route path="/Cart" Component={Cart}/>
           <Route path="/Signin" Component={Signin}/>
           <Route path="/Signup" Component={Signup}/>
-          <Route path="/categ1" Component={Category1}/>
-          <Route path="/categ2" Component={Category2}/>
-          <Route path="/categ3" Component={Category3}/>
+          <Route path="/dress" Component={Dress}/>
+          <Route path="/pajamas" Component={Pajamas}/>
+          <Route path="/hoddie" Component={Hoddie}/>
+          <Route path="/legging" Component={Legging}/>
           <Route path="/Shopdetail" Component={Shopdetail}/>
         </Routes>
       </div>

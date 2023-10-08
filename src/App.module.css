@@ -22,10 +22,10 @@ a {
 .content{
     display: flex;
     justify-content: center;
+    margin-top: 0.625rem;
 }
 
 .footer{
-    position: fixed;
     bottom: 0;
     width: 100%;
 }

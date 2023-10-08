@@ -18,7 +18,7 @@
 label {
     text-align: center;
 }
-.signupcomponent {
+.signupcontainer > div {
     margin: 10px;
     padding: 6px;
     border: 1px black solid;
@@ -29,21 +29,21 @@ label {
     margin: 3px;
 }
 
-.signupcomponent, .signup-input  {
+.signup-component, .signupcontainer div > input  {
     background-color: rgb(209, 209, 209);
 }
 
-.signupheader {
+.signup-header {
     width: 300px;
     border: none;
 }
 
-.signupinput {
+.signup-input {
     width: 300px;
     border: none;
 }
 
-.button {
+.btncontainer button {
     background-color: rgb(27, 98, 139);
     border: none;
     color: white;
@@ -59,4 +59,9 @@ label {
     justify-content: center;
 }
 
-/* ------part of main menu------ */
+.message{
+    color: green;
+    font-weight:  bold;
+    text-align: center;
+    margin-top: 1rem;
+}

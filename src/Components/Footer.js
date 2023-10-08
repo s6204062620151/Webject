@@ -1,11 +1,9 @@
-import React from "react";
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons';
 import { faGlobe, faLocationDot, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import style from './footer.module.css';
+import style from './CSS/footer.module.css';
 
 function Footer() {
   return (
