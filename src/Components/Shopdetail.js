@@ -1,8 +1,45 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import style from './CSS/shopdetail.module.css';
 
 function Shopdetail() {
+  const [productselected, setProductselected] = useState([]);
+
+  const getData = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/getproductSelected');
+      // console.log(response.data[0]);
+      setProductselected(response.data)
+    }catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  // console.log(productselected);
   return (
-    <div>Shopdetail</div>
+    <div className={style.container}>
+      {productselected.map((product, index) => (
+        <div key={index} className={style.product}>
+          <div className={style.productdetail}>
+            <img src={'./Image/product/'+product.picture} alt={`dress Image`}/>
+            <div className={style.detailes}>
+              <div>{product.name}</div>
+              <div>{"$ "+product.price}</div>
+              <div>{"Size: "+product.size}</div>
+              <div>{"Color: "+product.color}</div>
+            </div>
+          </div>
+          <div className={style.description}>
+            <div className={style.scripTitle}>Product detail</div>
+            <div>{product.description}</div>
+          </div>
+        </div>
+      ))}
+    </div>
   )
 }
 
