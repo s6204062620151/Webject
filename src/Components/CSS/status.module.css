@@ -1,0 +1,7 @@
+table, th, td {
+    border: 0.063rem solid black;
+}
+
+table{
+    margin-bottom: 0.625rem;
+}

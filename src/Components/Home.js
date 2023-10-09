@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import style from './CSS/Home.module.css';
 import axios from 'axios';
 
@@ -36,6 +36,20 @@ const Home = () => {
     getData();
   }, []);
 
+  const navigation = useNavigate();
+  const categorydress = () =>{
+    navigation('/dress');
+  }
+  const categorypajamas = () =>{
+    navigation('/pajamas');
+  }
+  const categoryhoddie = () =>{
+    navigation('/hoddie');
+  }
+  const categorylegging = () =>{
+    navigation('/legging');
+  }
+
   return (
     <div className={style.container}>
       <div className={style.topSell}>
@@ -56,41 +70,41 @@ const Home = () => {
       <div className={style.categories}>
         <div className={style.header}>Categories<hr/></div>
         <div className={style.categorybar}>
-          <div className={style.categoryChoice}>
+          <div className={style.categoryChoice} onClick={categorydress}>
             <img src='./Image/product/dress-1.jpeg' alt={`dress Image`}/>
-            <Link to="/dress">Dress</Link>
+            <div>Dress</div>
           </div>
-          <div className={style.categoryChoice}>
+          <div className={style.categoryChoice} onClick={categorypajamas}>
             <img src='./Image/product/long-pant-1.jpeg' alt={`Pajamas Image`}/>
-            <Link to="/pajamas">Pajamas</Link>
+            <div>Pajamas</div>
           </div>
-          <div className={style.categoryChoice}>
+          <div className={style.categoryChoice} onClick={categoryhoddie}>
             <img src='/Image/product/sweater-1.jpeg' alt={`Hoddie Image`}/>
-            <Link to="/hoddie">Hoddie</Link>
+            <div>Hoddie</div>
           </div>
-          <div className={style.categoryChoice}>
+          <div className={style.categoryChoice} onClick={categorylegging}>
             <img src='/Image/product/long-pant-2.jpeg' alt={`Legging Image`}/>
-            <Link to="/legging">Legging</Link>
+            <div>Legging</div>
           </div>
           <div className={style.categoryChoice}>
             <img src='/Image/product/T-shirt-3.jpeg' alt={`Category05 Image`}/>
-            <Link>Category05</Link>
+            <div>Category05</div>
           </div>
           <div className={style.categoryChoice}>
             <img src='/Image/product/shelf-1.jpeg' alt={`Category06 Image`}/>
-            <Link>Category06</Link>
+            <div>Category06</div>
           </div>
           <div className={style.categoryChoice}>
             <img src='/Image/product/pant-set-1.jpeg' alt={`Category07 Image`}/>
-            <Link>Category07</Link>
+            <div>Category07</div>
           </div>
           <div className={style.categoryChoice}>
             <img src='/Image/product/dress-set-1.jpeg' alt={`Category08 Image`}/>
-            <Link>Category08</Link>
+            <div>Category08</div>
           </div>
           <div className={style.categoryChoice}>
             <img src='/Image/product/coat-1.jpeg' alt={`Category09 Image`}/>
-            <Link>Category09</Link>
+            <div>Category09</div>
           </div>
         </div>
       </div>

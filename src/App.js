@@ -14,8 +14,22 @@ import Dress from './Components/Category/Dress';
 import Pajamas from './Components/Category/Pajamas';
 import Hoddie from './Components/Category/Hoddie';
 import Legging from './Components/Category/Legging';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
+  const getData = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/getUser', {withCredentials: true});
+      // console.log(response.data.user.email);
+    }catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div className={style.container}>
       <div className={style.searchbar}><Searchbar/></div>
@@ -31,7 +45,7 @@ function App() {
           <Route path="/pajamas" Component={Pajamas}/>
           <Route path="/hoddie" Component={Hoddie}/>
           <Route path="/legging" Component={Legging}/>
-          <Route path="/Shopdetail" Component={Shopdetail}/>
+          <Route path="/shopdetail" Component={Shopdetail}/>
         </Routes>
       </div>
       
