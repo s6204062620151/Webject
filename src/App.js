@@ -9,7 +9,6 @@ import Cart from './Components/Cart';
 import Signin from './Components/SignIn';
 import Signup from './Components/SignUp';
 import Footer from './Components/Footer';
-
 import Dress from './Components/Category/Dress';
 import Pajamas from './Components/Category/Pajamas';
 import Hoddie from './Components/Category/Hoddie';
