@@ -31,11 +31,36 @@ function Shopdetail() {
               <div>{"$ "+product.price}</div>
               <div>{"Size: "+product.size}</div>
               <div>{"Color: "+product.color}</div>
+
+              {/* onClickfunction? */}
+              <div className={style.addtocart} onClick=""> 
+                Add To Cart
+              </div>
             </div>
           </div>
           <div className={style.description}>
             <div className={style.scripTitle}>Product detail</div>
             <div>{product.description}</div>
+          </div>
+          <div>Other May You Like</div>
+
+          {/* add picture path */}
+          <div className={style.otherproduct}>
+            <div className={style.oterproduct} onClick="">
+              <img src='./Image/product/long-pant-1.jpeg' alt={`Pajamas Image`} className={style.otherproductimage} />
+            </div>
+            <div className={style.oterproduct} onClick="">
+              <img src='./Image/product/long-pant-1.jpeg' alt={`Pajamas Image`} className={style.otherproductimage} />
+            </div>
+            <div className={style.oterproduct} onClick="">
+              <img src='./Image/product/long-pant-1.jpeg' alt={`Pajamas Image`} className={style.otherproductimage} />
+            </div>
+            <div className={style.oterproduct} onClick="">
+              <img src='./Image/product/long-pant-1.jpeg' alt={`Pajamas Image`} className={style.otherproductimage} />
+            </div>
+            <div className={style.oterproduct} onClick="">
+              <img src='./Image/product/long-pant-1.jpeg' alt={`Pajamas Image`} className={style.otherproductimage} />
+            </div>
           </div>
         </div>
       ))}
