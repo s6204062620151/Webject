@@ -1,8 +1,18 @@
 .container{
     display: flex;
-    justify-content: center;
 }
 
 .container > div {
     margin: 0.625rem;
+}
+
+.inputSearch{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 5rem;
 }

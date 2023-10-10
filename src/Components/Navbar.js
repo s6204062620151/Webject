@@ -17,7 +17,7 @@ function Navbar() {
     <nav>
         <ul className={style.Navmenu}>
             <li className={style.categoryMenu} onClick={toggleDropdown}>
-              <img src='./Image/logo.jpg' className={style.logo}></img>
+
               <div>categories</div>
             </li>
             <div className={style.navlink}>
