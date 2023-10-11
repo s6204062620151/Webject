@@ -18,8 +18,23 @@ function Shopdetail() {
   useEffect(() => {
     getData();
   }, []);
-
   // console.log(productselected);
+
+  const postProduct = async (productid) => {
+    try{
+      const userresponse = await axios.get('http://localhost:3001/getUser', {withCredentials: true});
+      const carttresponse = await axios.post('http://localhost:3001/postproductid',
+      { productid: productid , email: userresponse.data.user.email });
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
+
+  // const pickItcart = () =>{
+
+  // }
+
   return (
     <div className={style.container}>
       {productselected.map((product, index) => (
@@ -31,7 +46,6 @@ function Shopdetail() {
               <div>{"$ "+product.price}</div>
               <div>{"Size: "+product.size}</div>
               <div>{"Color: "+product.color}</div>
-
               {/* onClickfunction? */}
               <div className={style.addtocart} onClick=""> 
                 Add To Cart

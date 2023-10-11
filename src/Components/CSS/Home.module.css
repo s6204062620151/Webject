@@ -29,8 +29,15 @@
 .categories .categorybar .categoryChoice{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     height: 100%;
+}
+
+.categoryChoice:hover{
+    cursor: pointer;
+    color: red;
 }
 
 .categorybar{

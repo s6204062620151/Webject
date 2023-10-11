@@ -9,6 +9,12 @@
     flex-direction: column;
     align-items: center;
 }
+
+.product:hover{
+    cursor: pointer;
+    color: red;
+}
+
 .product img{
     width: 40%;
     height: 60%;
