@@ -1,6 +1,6 @@
 .productdetail{
     display: flex;
-    width: 30rem;
+    width: 35rem;
     height: 20rem;
     margin-bottom: .625rem;
 }
@@ -10,12 +10,36 @@
     margin-right: 6.25rem;
 }
 .productdetail .detailes{
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+
 .description{
     margin-bottom: 3.125rem;
+}
+
+.addtocart {
+    background-color: pink;
+    padding: 0.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.otherproduct .otherproductimage:first-child {
+    padding-left: 0;
+}
+
+.otherproduct {
+    display: flex;
+}
+
+.otherproductimage {
+    display: flex;
+    padding: 0.5rem;
+    border: 1.5rem;
+    width: 7rem;
+    height: 10rem;
 }

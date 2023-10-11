@@ -1,8 +1,37 @@
 .container{
     display: flex;
-    justify-content: center;
 }
 
 .container > div {
     margin: 0.625rem;
+}
+
+.inputSearch{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+input {
+    width: 20rem;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 25px;
+    outline: none;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    padding: 0.75rem;
+    margin: 1.5rem;
+    border-radius: 25px;
+}
+
+.logo {
+    /* display: flex;
+    align-items: center;  */
+    width: 5rem;
+    cursor: pointer;
 }
