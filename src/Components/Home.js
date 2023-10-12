@@ -10,7 +10,14 @@ const Home = () => {
   const [bestproductimg, setBestproductimg] = useState({
     picture1: '', picture2: '', picture3: ''
   })
-  const [valueproducts, setValueproducts] = useState([]);
+  const [simpleproducts, setSimpleproducts] = useState({
+    simple1id: '', simple1picture: '',
+    simple2id: '', simple2picture: '',  
+    simple3id: '', simple3picture: '', 
+    simple4id: '', simple4picture: '', 
+    simple5id: '', simple5picture: '',
+    simple6id: '', simple6picture: '' 
+  });
 
   const getData = async () => {
     try {
@@ -33,13 +40,28 @@ const Home = () => {
       })
       // console.log(response)
 
-      const getproductres = await axios.get('http://localhost:3001/getAllproduct');
-      setValueproducts(getproductres.data);
+      const getproductres = await axios.get('http://localhost:3001/getsimpleproduct');
+      setSimpleproducts({
+        simple1id: getproductres.data.simple1.productid, 
+        simple1picture: getproductres.data.simple1.picture,
+        simple2id: getproductres.data.simple2.productid, 
+        simple2picture: getproductres.data.simple2.picture,  
+        simple3id: getproductres.data.simple3.productid, 
+        simple3picture: getproductres.data.simple3.picture, 
+        simple4id: getproductres.data.simple4.productid, 
+        simple4picture: getproductres.data.simple4.picture, 
+        simple5id: getproductres.data.simple5.productid, 
+        simple5picture: getproductres.data.simple5.picture,
+        simple6id: getproductres.data.simple6.productid, 
+        simple6picture: getproductres.data.simple6.picture 
+      });
+      // console.log(simpleproducts);
+      // console.log(getproductres.data.simple1.productid)
     }catch (error) {
       console.error(error);
     }
   }
-
+  // console.log(simpleproducts);
   const navigation = useNavigate();
   const selectedproduct = async (productid) =>{
     try{
@@ -134,14 +156,47 @@ const Home = () => {
       <div className={style.containerProduct}>
         <div className={style.header}>Products<hr/></div>
         <div className={style.showProduct}>
-          {valueproducts.map((product, index) => (
-            <div key={index} className={style.product}
-            onClick={() => selectedproduct(product.productid)}>
-              <img src={'./Image/image/'+product.picture} alt={`Product Image`}/>
-              <div>{product.name}</div>
-              <div>{product.price}</div>
-            </div>
-          ))}
+          <div className={style.product}>
+            <img 
+              src={'./Image/image/'+simpleproducts.simple1picture} 
+              alt={`${simpleproducts.simple1id} Image`} 
+              onClick={() => selectedproduct(simpleproducts.simple1id)}/>
+          </div>
+
+          <div className={style.product}>
+            <img 
+              src={'./Image/image/'+simpleproducts.simple2picture} 
+              alt={`${simpleproducts.simple2id} Image`} 
+              onClick={() => selectedproduct(simpleproducts.simple2id)}/>
+          </div>
+
+          <div className={style.product}>
+            <img 
+              src={'./Image/image/'+simpleproducts.simple3picture} 
+              alt={`${simpleproducts.simple3id} Image`} 
+              onClick={() => selectedproduct(simpleproducts.simple3id)}/>
+          </div>
+
+          <div className={style.product}>
+            <img 
+              src={'./Image/image/'+simpleproducts.simple4picture} 
+              alt={`${simpleproducts.simple4id} Image`} 
+              onClick={() => selectedproduct(simpleproducts.simple4id)}/>
+          </div>
+
+          <div className={style.product}>
+            <img 
+              src={'./Image/image/'+simpleproducts.simple5picture} 
+              alt={`${simpleproducts.simple5id} Image`} 
+              onClick={() => selectedproduct(simpleproducts.simple5id)}/>
+          </div>
+
+          <div className={style.product}>
+            <img 
+              src={'./Image/image/'+simpleproducts.simple6picture} 
+              alt={`${simpleproducts.simple1id} Image`} 
+              onClick={() => selectedproduct(simpleproducts.simple6id)}/>
+          </div>
         </div>
       </div>
 
