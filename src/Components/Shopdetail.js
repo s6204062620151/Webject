@@ -11,7 +11,7 @@ function Shopdetail() {
     rec3id: '', rec3picture: '', 
     rec4id: '', rec4picture: '', 
     rec5id: '', rec5picture: '' 
-});
+  });
 
   const getData = async () => {
     try {
@@ -41,7 +41,7 @@ function Shopdetail() {
   useEffect(() => {
     getData();
   }, []);
-  console.log(recproducts);
+  // console.log(recproducts);
 
   const postProductcart = async (productid, price) => {
     try{

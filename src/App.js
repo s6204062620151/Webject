@@ -13,8 +13,15 @@ import Dress from './Components/Category/Dress';
 import Pajamas from './Components/Category/Pajamas';
 import Hoddie from './Components/Category/Hoddie';
 import Legging from './Components/Category/Legging';
+import { useState } from 'react';
 
 function App() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div className={style.container}>
       <div className={style.searchbar}><Searchbar/></div>
