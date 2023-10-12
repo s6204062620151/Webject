@@ -42,7 +42,7 @@ function Pajamas() {
       {valueproducts.map((product, index) => (
         <div key={index} className={style.product} 
         onClick={() => selectedproduct(product.productid)}>
-          <img src={'./Image/product/'+product.picture} alt={`dress Image`}/>
+          <img src={'./Image/image/'+product.picture} alt={`dress Image`}/>
           <div>{product.name}</div>
           <div>{product.price}</div>
         </div>

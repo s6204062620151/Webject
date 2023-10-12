@@ -1,19 +1,36 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
 .topSell{
     display: flex;
     justify-content: center;
+    text-align: center;
     width: 25rem;
-    height: 18rem;
+    height: 10rem;
 }
 
 .topSell .bestsell {
     width: 80%;
     height: 80%;
     margin-right: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .bestsell img{
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 80%;
+}
+
+.containerProduct{
+    text-align: center;
+}
+.containerProduct img{
+    width: 60%;
+    height: 80%;
 }
 
 .bestsell .labelname{
@@ -35,7 +52,7 @@
     height: 100%;
 }
 
-.categoryChoice:hover{
+.categoryChoice:hover , .bestsell:hover, .product:hover{
     cursor: pointer;
     color: red;
 }
@@ -47,4 +64,11 @@
 .categoryChoice img{
     width: 60%;
     height: 80%;
+}
+
+.showProduct{
+    width: 25rem;
+    height: 40rem;
+    display: grid;
+    grid-template-columns: auto auto ;
 }

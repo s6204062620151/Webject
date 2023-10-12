@@ -15,6 +15,7 @@ a {
 .container{
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .navbar{
     
@@ -22,10 +23,12 @@ a {
 .content{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 0.625rem;
 }
 
 .footer{
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
