@@ -5,12 +5,34 @@ import style from './CSS/shopdetail.module.css';
 function Shopdetail() {
   const [productselected, setProductselected] = useState([]);
   const [totalquantity, setTotalquantity] = useState(1);
+  const [recproducts, setRecproducts] = useState({
+    rec1id: '', rec1picture: '',
+    rec2id: '', rec2picture: '',  
+    rec3id: '', rec3picture: '', 
+    rec4id: '', rec4picture: '', 
+    rec5id: '', rec5picture: '' 
+});
 
   const getData = async () => {
     try {
       const response = await axios.get('http://localhost:3001/getproductSelected');
-      // console.log(response.data[0]);
-      setProductselected(response.data)
+      const recproductres = await axios.post('http://localhost:3001/reccomendproduct',
+      { type:  response.data[0].category });
+      // console.log(recproductres.data);
+      // console.log(response.data[0].category);
+      setProductselected(response.data);
+      setRecproducts({
+        rec1id: recproductres.data.rec1.productid, 
+        rec1picture: recproductres.data.rec1.picture,
+        rec2id: recproductres.data.rec2.productid, 
+        rec2picture: recproductres.data.rec2.picture,
+        rec3id: recproductres.data.rec3.productid, 
+        rec3picture: recproductres.data.rec3.picture,
+        rec4id: recproductres.data.rec4.productid, 
+        rec4picture: recproductres.data.rec4.picture,
+        rec5id: recproductres.data.rec5.productid, 
+        rec5picture: recproductres.data.rec5.picture,
+      });
     }catch (error) {
       console.error(error);
     }
@@ -19,7 +41,7 @@ function Shopdetail() {
   useEffect(() => {
     getData();
   }, []);
-  // console.log(productselected);
+  console.log(recproducts);
 
   const postProductcart = async (productid, price) => {
     try{
@@ -31,6 +53,18 @@ function Shopdetail() {
     }
     catch(error){
       console.log(error);
+    }
+  }
+
+  const selectedproduct = async (productid) =>{
+    try{
+      const response = await axios.post('http://localhost:3001/selectedProduct', {
+        productid:  productid
+      })
+      window.location.href = '/shopdetail';
+    }
+    catch(err){
+      console.log(err);
     }
   }
 
@@ -70,20 +104,20 @@ function Shopdetail() {
           <div className={style.otherproduct}>
             <div>Other May You Like<hr/></div>
               <div className={style.productall}>
-                <div className={style.oterproduct} onClick="">
-                  <img src='./Image/product/long-pant-1.jpeg' alt={`Pajamas Image`} className={style.otherproductimage} />
+                <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec1id)}>
+                  <img src={'./Image/image/'+recproducts.rec1picture} alt={`Pajamas Image`} className={style.otherproductimage} />
                 </div>
-                <div className={style.oterproduct} onClick="">
-                  <img src='./Image/product/long-pant-1.jpeg' alt={`Pajamas Image`} className={style.otherproductimage} />
+                <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec2id)}>
+                  <img src={'./Image/image/'+recproducts.rec2picture} alt={`Pajamas Image`} className={style.otherproductimage} />
                 </div>
-                <div className={style.oterproduct} onClick="">
-                  <img src='./Image/product/long-pant-1.jpeg' alt={`Pajamas Image`} className={style.otherproductimage} />
+                <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec3id)}>
+                  <img src={'./Image/image/'+recproducts.rec3picture} alt={`Pajamas Image`} className={style.otherproductimage} />
                 </div>
-                <div className={style.oterproduct} onClick="">
-                  <img src='./Image/product/long-pant-1.jpeg' alt={`Pajamas Image`} className={style.otherproductimage} />
+                <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec4id)}>
+                  <img src={'./Image/image/'+recproducts.rec4picture} alt={`Pajamas Image`} className={style.otherproductimage} />
                 </div>
-                <div className={style.oterproduct} onClick="">
-                  <img src='./Image/product/long-pant-1.jpeg' alt={`Pajamas Image`} className={style.otherproductimage} />
+                <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec5id)}>
+                  <img src={'./Image/image/'+recproducts.rec1picture} alt={`Pajamas Image`} className={style.otherproductimage} />
                 </div>
               </div>
           </div>
