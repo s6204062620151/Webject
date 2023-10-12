@@ -11,28 +11,34 @@
 }
 .productdetail .detailes{
     /* display: flex; */
+    text-align: center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
+    width: 60%;
 }
 
-
+.detailes, .description{
+    background-color: #D9D9D9;
+}
 .description{
     margin-bottom: 3.125rem;
 }
 
 .addtocart {
+    margin-top: 0.625rem;
     background-color: pink;
-    padding: 0.5rem;
+    width: 100%;
     border-radius: 25px;
     cursor: pointer;
+    text-align: center;
 }
 
-.otherproduct .otherproductimage:first-child {
+.productall .otherproductimage:first-child {
     padding-left: 0;
 }
 
-.otherproduct {
+.productall {
     display: flex;
 }
 
@@ -43,3 +49,5 @@
     width: 7rem;
     height: 10rem;
 }
+
+

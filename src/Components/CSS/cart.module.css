@@ -10,8 +10,3 @@ table{
 .header{
     margin-bottom: 0.625rem;
 }
-
-.cartTable , .productTable {
-    display: flex;
-    flex-direction: column;
-}
