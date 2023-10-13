@@ -13,15 +13,9 @@ import Dress from './Components/Category/Dress';
 import Pajamas from './Components/Category/Pajamas';
 import Hoddie from './Components/Category/Hoddie';
 import Legging from './Components/Category/Legging';
-import { useState } from 'react';
 
 function App() {
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <div className={style.container}>
       <div className={style.searchbar}><Searchbar/></div>
@@ -37,7 +31,7 @@ function App() {
           <Route path="/pajamas" Component={Pajamas}/>
           <Route path="/hoddie" Component={Hoddie}/>
           <Route path="/legging" Component={Legging}/>
-          <Route path="/shopdetail" Component={Shopdetail}/>
+          <Route path="/shopdetail/:pathproduct" Component={Shopdetail}/>
         </Routes>
       </div>
       

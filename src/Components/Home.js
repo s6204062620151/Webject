@@ -63,16 +63,10 @@ const Home = () => {
   }
   // console.log(simpleproducts);
   const navigation = useNavigate();
-  const selectedproduct = async (productid) =>{
-    try{
-      const response = await axios.post('http://localhost:3001/selectedProduct', {
-        productid:  productid
-      })
-      navigation('/shopdetail');
-    }
-    catch(err){
-      console.log(err);
-    }
+  const selectedproduct = (productid) =>{
+    // console.log(productid)
+    // console.log(pathproduct)
+    navigation(`/shopdetail/${productid}`);
   }
 
   useEffect(() => {

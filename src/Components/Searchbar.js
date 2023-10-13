@@ -13,7 +13,7 @@ function Searchbar() {
   return (
     <div className={style.container}> 
             <div  onClick={home}>
-                <img src='./Image/logo.jpg' className={style.logo}></img>
+                <img src={`${process.env.PUBLIC_URL}/Image/logo.jpg`} className={style.logo}></img>
                 </div>
                   <div className={style.inputSearch}>
                     <input placeholder="What's you looking for ?"/>
