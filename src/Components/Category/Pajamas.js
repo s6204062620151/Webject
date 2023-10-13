@@ -25,17 +25,11 @@ function Pajamas() {
   //console.log(valueproducts);
 
   const navigation = useNavigate();
-   const selectedproduct = async (productid) =>{
-      try{
-        const response = await axios.post('http://localhost:3001/selectedProduct', {
-          productid:  productid
-        })
-        navigation('/shopdetail')
-      }
-      catch(err){
-        console.log(err);
-      }
-   }
+  const selectedproduct = (productid) =>{
+    // console.log(productid)
+    // console.log(pathproduct)
+    navigation(`/shopdetail/${productid}`);
+  }
 
   return (
     <div className={style.container}>
