@@ -43,6 +43,15 @@ function Navbar() {
             <li><Link to="/pajamas">Pajamas</Link></li>
             <li><Link to="/hoddie">Hoddie</Link></li>
             <li><Link to="/legging">Legging</Link></li>
+            <li><Link to="/bag">Bag</Link></li>
+            <li><Link to="/clothes">Clothes set</Link></li>
+            <li><Link to="/coat">Coat</Link></li>
+            <li><Link to="/hat">Hat</Link></li>
+            <li><Link to="/long-pant">Long pant</Link></li>
+            <li><Link to="/pant">Pant</Link></li>
+            <li><Link to="/shirt">Shirt</Link></li>
+            <li><Link to="/sweater">Sweater</Link></li>
+            <li><Link to="/tshirt">T-shirt</Link></li>
           </ul>
         )}
         

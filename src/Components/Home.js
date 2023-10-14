@@ -86,7 +86,33 @@ const Home = () => {
   const categorylegging = () =>{
     navigation('/legging');
   }
-
+  const categorybag = () =>{
+    navigation('/bag');
+  }
+  const categoryclothes = () =>{
+    navigation('/clothes');
+  }
+  const categorycoat = () =>{
+    navigation('/coat');
+  }
+  const categoryhat = () =>{
+    navigation('/hat');
+  }
+  const categorylongpant = () =>{
+    navigation('/long-pant');
+  }
+  const categorypant = () =>{
+    navigation('/pant');
+  }
+  const categoryshirt = () =>{
+    navigation('/shirt');
+  }
+  const categorysweater = () =>{
+    navigation('/sweater');
+  }
+  const categorytshirt = () =>{
+    navigation('/tshirt');
+  }
 
   return (
     <div className={style.container}>
@@ -124,25 +150,41 @@ const Home = () => {
             <img src='/Image/image/long pant/long-pant-2.jpeg' alt={`Legging Image`}/>
             <div>Legging</div>
           </div>
-          <div className={style.categoryChoice}>
-            <img src='/Image/image/t-shirt/T-shirt-3.jpeg' alt={`Category05 Image`}/>
-            <div>Category05</div>
+          <div className={style.categoryChoice} onClick={categorybag}>
+            <img src='/Image/image/bag/bag-1.jpeg' alt={`Bag Image`}/>
+            <div>Bag</div>
           </div>
-          <div className={style.categoryChoice}>
-            <img src='/Image/image/sweater/sweater-1.jpeg' alt={`Category06 Image`}/>
-            <div>Category06</div>
+          <div className={style.categoryChoice} onClick={categoryclothes}>
+            <img src='/Image/image/clothes set/clothes-set-1.jpg' alt={`Clothes Image`}/>
+            <div>Clothes set</div>
           </div>
-          <div className={style.categoryChoice}>
-            <img src='/Image/image/pant/pant-1.jpeg' alt={`Category07 Image`}/>
-            <div>Category07</div>
+          <div className={style.categoryChoice} onClick={categorycoat}>
+            <img src='/Image/image/coat/coat-1.jpeg' alt={`Coat Image`}/>
+            <div>Coat</div>
           </div>
-          <div className={style.categoryChoice}>
-            <img src='/Image/image/clothes set/clothes-set-1.jpg' alt={`Category08 Image`}/>
-            <div>Category08</div>
+          <div className={style.categoryChoice} onClick={categoryhat}>
+            <img src='/Image/image/hat/hat-1.jpeg' alt={`Hat Image`}/>
+            <div>Hat</div>
           </div>
-          <div className={style.categoryChoice}>
-            <img src='/Image/image/coat/coat-1.jpeg' alt={`Category09 Image`}/>
-            <div>Category09</div>
+          <div className={style.categoryChoice} onClick={categorylongpant}>
+            <img src='/Image/image/long pant/long-pant-1.jpeg' alt={`Long pant Image`}/>
+            <div>Long pant</div>
+          </div>
+          <div className={style.categoryChoice} onClick={categorypant}>
+            <img src='/Image/image/pant/pant-1.jpeg' alt={`Pant Image`}/>
+            <div>Pant</div>
+          </div>
+          <div className={style.categoryChoice} onClick={categoryshirt}>
+            <img src='/Image/image/shirt/shirt-1.png' alt={`Shirt Image`}/>
+            <div>Shirt</div>
+          </div>
+          <div className={style.categoryChoice} onClick={categorysweater}>
+            <img src='/Image/image/sweater/sweater-1.jpeg' alt={`Sweater Image`}/>
+            <div>Sweater</div>
+          </div>
+          <div className={style.categoryChoice} onClick={categorytshirt}>
+            <img src='/Image/image/t-shirt/T-shirt-1.png' alt={`T-shirt Image`}/>
+            <div>T-shirt</div>
           </div>
         </div>
       </div>

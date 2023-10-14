@@ -19,7 +19,7 @@ function Shopdetail() {
     try {
       const response = await axios.get(`http://localhost:3001/getproductSelected/${pathproduct}`);
       const recproductres = await axios.get('http://localhost:3001/reccomendproduct');
-      console.log(recproductres);
+      //console.log(recproductres);
       // console.log(response.data[0].category);
       setProductselected(response.data[0]);
       setRecproducts({
@@ -66,7 +66,9 @@ function Shopdetail() {
     <div className={style.container}>
         <div className={style.product}>
           <div className={style.productdetail}>
-            <img src={`${process.env.PUBLIC_URL}/Image/image/${productselected.picture}`} alt={`dress Image`}/>
+            <div className={style.productimage}>
+              <img src={`${process.env.PUBLIC_URL}/Image/image/${productselected.picture}`} alt={`dress Image`}/>
+            </div>
             <div className={style.detailes}>
               <div>{productselected.name}</div>
               <div>{"$ "+productselected.price}</div>
@@ -96,19 +98,19 @@ function Shopdetail() {
             <div>Other May You Like<hr/></div>
               <div className={style.productall}>
                 <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec1id)}>
-                  <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec1picture}`} alt={`Pajamas Image`} className={style.otherproductimage} />
+                  <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec1picture}`} alt={`Pajamas Image`} />
                 </div>
                 <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec2id)}>
-                  <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec2picture}`} alt={`Pajamas Image`} className={style.otherproductimage} />
+                  <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec2picture}`} alt={`Pajamas Image`} />
                 </div>
                 <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec3id)}>
-                  <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec3picture}`} alt={`Pajamas Image`} className={style.otherproductimage} />
+                  <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec3picture}`} alt={`Pajamas Image`} />
                 </div>
                 <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec4id)}>
-                  <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec4picture}`} alt={`Pajamas Image`} className={style.otherproductimage} />
+                  <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec4picture}`} alt={`Pajamas Image`} />
                 </div>
                 <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec5id)}>
-                  <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec5picture}`} alt={`Pajamas Image`} className={style.otherproductimage} />
+                  <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec5picture}`} alt={`Pajamas Image`} />
                 </div>
               </div>
           </div>
