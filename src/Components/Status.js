@@ -43,38 +43,46 @@ function Status() {
       <div className={style.cartTable}>
         <div className={style.header}>All Cart.<hr/></div>
         <table>
-          <tr>
-            <th>Order ID</th>
-            <th>Status</th>
-            <th>Show product</th>
-          </tr>
-          {carts.map((cart, index) => (
-          <tr key={index}>
-            <td>{cart.cartid}</td>
-            <td>{cart.payment_status}</td>
-            <td><button onClick={() => showproduct(cart.cartid)}>Show</button></td>
-          </tr>
-          ))}
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Status</th>
+              <th>Show product</th>
+            </tr>
+          </thead>
+          <tbody>
+            {carts.map((cart, index) => (
+            <tr key={index}>
+              <td>{cart.cartid}</td>
+              <td>{cart.payment_status}</td>
+              <td><button onClick={() => showproduct(cart.cartid)}>Show</button></td>
+            </tr>
+            ))}
+          </tbody>
         </table>
       </div>
 
       <div className={style.productTable}>
         <div className={style.header}>Product In Cart.<hr/></div>
         <table>
-          <tr>
-            <th>ProductId</th>
-            <th>ProductName</th>
-            <th>Quantity</th>
-            <th>Total_price</th>
-          </tr>
-          {products.map((product, index) => (
-          <tr key={index}>
-            <td>{product.productid}</td>
-            <td>{product.name}</td>
-            <td>{product.quantity}</td>
-            <td>{product.totalprice+' $'}</td>
-          </tr>
-          ))}
+          <thead>
+            <tr>
+              <th>ProductId</th>
+              <th>ProductName</th>
+              <th>Quantity</th>
+              <th>Total_price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((product, index) => (
+            <tr key={index}>
+              <td>{product.productid}</td>
+              <td>{product.name}</td>
+              <td>{product.quantity}</td>
+              <td>{product.totalprice+' $'}</td>
+            </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>

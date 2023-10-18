@@ -23,6 +23,8 @@ import Shirt from './Components/Category/Shirt';
 import Sweater from './Components/Category/Sweater';
 import Tshirt from './Components/Category/Tshirt';
 import Searchproduct from './Components/Searchproduct';
+import Orderconfirm from './Components/Orderconfirm';
+import Ordercheck from './Components/Ordercheck';
 
 function App() {
 
@@ -52,6 +54,8 @@ function App() {
           <Route path="/tshirt" Component={Tshirt}/>
           <Route path="/shopdetail/:pathproduct" Component={Shopdetail}/>
           <Route path="/searchproduct/:searchkey" Component={Searchproduct}/>
+          <Route path="/ordercheck/:userid/:cartid" Component={Ordercheck}/>
+          <Route path="/orderconfirm/:userid/:cartid" Component={Orderconfirm}/>
         </Routes>
       </div>
       
