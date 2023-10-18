@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import style from './App.module.css';
+
+
 import Navbar from './Components/Navbar';
 import Searchbar from './Components/Searchbar'
 import Home from './Components/Home';
