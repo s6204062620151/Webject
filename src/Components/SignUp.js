@@ -20,14 +20,14 @@ const SignUp = () => {
     e.preventDefault();
 
     try{
-      const response = await axios.post('http://localhost:3001/signup',{
+      const response = await axios.post('http://localhost:3001/signup',{params :{
         email: email,
         password: password,
         name: name+' '+surname,
         phone_number: phonenumber,
         address: housenumber+'/'+province+'/'+city+'/'+district+'/'+zipcode,
         role: 'user'
-      });
+    }});
       console.log(response.data.message);
       if(response.data.message === "Signup Success!"){
         setMessage(response.data.message);
