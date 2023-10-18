@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+}
+
+.usercontent{
+    margin-right: 2.5rem;
+}
+.userdetailed, .addressdetailed{
+    display: flex;
+}
+
+.detailed{}
+
+
+.fulladdress{
+    text-align: center;
+    margin-top: 0.625rem;
+}
+
+.paymentdetailed > hr{
+    border-top: 1px dashed ;
+}

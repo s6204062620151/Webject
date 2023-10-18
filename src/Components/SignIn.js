@@ -7,6 +7,7 @@ function SignIn() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
 
   axios.defaults.withCredentials = true;
   const SignIn = async (e) =>{
@@ -28,6 +29,7 @@ function SignIn() {
       }
       else{
         alert(response.data.message);
+        setMessage(response.data.message);
       }
     } catch(err){
       console.log(err);
@@ -54,6 +56,7 @@ function SignIn() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        <div>{message}</div>
         <button className={style.signinbtn} onClick={SignIn}>Sign in</button>
       </form><br/>
       <div className={style.signupref}>
