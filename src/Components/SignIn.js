@@ -18,14 +18,13 @@ function SignIn() {
         email: email,
         password: password
       })
-      console.log(response.data.token);
-      console.log(response.data.exp);
+      // console.log(response.data.token);
+      // console.log(response.data.exp);
       if(response.data.message === "SignIn Successful!"){
         //console.log(1)
         //localStorage.setItem('token', response.data.token);
         //console.log(2)
         alert(response.data.message);
-        window.location.href = '/';
       }
       else{
         alert(response.data.message);

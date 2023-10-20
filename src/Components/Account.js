@@ -27,7 +27,7 @@ function Account() {
 
   const signOut = () => {
     Cookies.remove('token');
-    window.location.href = '/Signin';
+    window.location.href = '/';
   }  
   
   return (
