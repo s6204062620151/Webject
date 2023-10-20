@@ -29,7 +29,7 @@ function Ordercheck() {
     const splitFullname = userinfo.name ? userinfo.name.split(' ') : ['', ''];
     const splitAddress = userinfo.address ? userinfo.address.split('/') : ['', '', '', '', ''];
     const totalPayment = payment.reduce((total, ord) => total + ord.totalprice, 0);
-    const Total = totalPayment.toFixed(decimals)
+    const Total = totalPayment.toFixed(decimals);
 
   return (
     <div className={style.container}>

@@ -20,7 +20,7 @@ const SignUp = () => {
     e.preventDefault();
 
     try{
-      const response = await axios.post('http://localhost:3001/signup',{params :{
+      const response = await axios.post('http://localhost:3001/signup',{data :{
         email: email,
         password: password,
         name: name+' '+surname,
