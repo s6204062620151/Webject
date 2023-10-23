@@ -6,12 +6,15 @@ function Status() {
 
   const [carts, setCarts] = useState([]);
   const [products, setProducts] = useState([]);
+  const [userid, setUserid] = useState('');
+  const [page] = useState('status');
 
   const getData = async () => {
     try {
       const userresponse = await axios.get('http://localhost:3001/getUser', {withCredentials: true});
       const cartresponse = await axios.post('http://localhost:3001/user_product', 
       { userid: userresponse.data.user.userid });
+      setUserid(userresponse.data.user.userid);
       // console.log(userresponse.data.user.userid);
       // console.log(cartresponse.data);
       setCarts(cartresponse.data);
@@ -36,6 +39,9 @@ function Status() {
     getData();
   }, []);
 
+  const selectedpayment = (cartid) => {
+    window.location.href = `/ordercheck/${userid}/${cartid}/${page}`;
+  }
   // console.log(categories);
 
   return (
@@ -48,6 +54,7 @@ function Status() {
               <th>Order ID</th>
               <th>Status</th>
               <th>Show product</th>
+              <th>Upload_payment</th>
             </tr>
           </thead>
           <tbody>
@@ -56,6 +63,13 @@ function Status() {
               <td>{cart.cartid}</td>
               <td>{cart.payment_status}</td>
               <td><button onClick={() => showproduct(cart.cartid)}>Show</button></td>
+              {cart.payment_status === "no" ? (
+                  <td>
+                    <button onClick={() => selectedpayment(cart.cartid)}>Selected</button>
+                  </td> 
+                ):(
+                  <td>DONE</td>
+                )}
             </tr>
             ))}
           </tbody>

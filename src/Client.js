@@ -25,11 +25,10 @@ import Shirt from './Components/Category/Shirt';
 import Sweater from './Components/Category/Sweater';
 import Tshirt from './Components/Category/Tshirt';
 import Searchproduct from './Components/Searchproduct';
-import Orderconfirm from './Components/Orderconfirm';
 import Ordercheck from './Components/Ordercheck';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Adminhome from './Components/Adminhome';
+import Admin from './Admin';
 
 function Client() {
   const [role, setRole] = useState('');
@@ -50,7 +49,7 @@ function Client() {
   return (
     <div>
       {role === "admin" ? (
-        <Adminhome/>
+        <Admin/>
       ) : (
         <div className={style.container}>
           <div className={style.searchbar}><Searchbar/></div>
@@ -78,8 +77,7 @@ function Client() {
               <Route path="/tshirt" Component={Tshirt}/>
               <Route path="/shopdetail/:pathproduct" Component={Shopdetail}/>
               <Route path="/searchproduct/:searchkey" Component={Searchproduct}/>
-              <Route path="/ordercheck/:userid/:cartid" Component={Ordercheck}/>
-              <Route path="/orderconfirm/:userid/:cartid" Component={Orderconfirm}/>
+              <Route path="/ordercheck/:userid/:cartid/:from" Component={Ordercheck}/>
             </Routes>
           </div>
           <footer className={style.footer}><Footer/></footer>
