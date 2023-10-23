@@ -17,15 +17,9 @@ a {
     flex-direction: column;
     position: relative;
 }
-
-.title{
-    text-align: center;
+.navbar{
+    
 }
-.logo{
-    width: 10rem;
-    height: 10rem;
-}
-
 .content{
     display: flex;
     justify-content: center;

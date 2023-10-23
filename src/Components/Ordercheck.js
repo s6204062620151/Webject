@@ -4,10 +4,22 @@ import { useParams } from 'react-router-dom';
 import style from './CSS/order.module.css';
 
 function Ordercheck() {
-    const { userid, cartid } = useParams();
+    const { userid, cartid, from } = useParams();
     const [payment, setPayment ] = useState([]);
     const [decimals] = useState(2);
     const [userinfo, setUserinfo] = useState([]);
+    const [choicepayment, setChoicepayment] = useState('');
+    const [userfile, setUserfile] = useState(null);
+    const [paymentchoices] = useState({
+        qr: "/Image/image/qrcode-payment/QR-code-scan.jpeg", 
+        prompt: "0966894337"
+    });
+
+    const handlePaymentChoiceChange = (event) => {
+        const selectedValue = event.target.value;
+        setChoicepayment(selectedValue);
+    }
+
     const getData = async() => {
         try{
             const response = await axios.get(`http://localhost:3001/ordercheck/${userid}/${cartid}`)
@@ -21,15 +33,54 @@ function Ordercheck() {
             console.log(err);
         }
     }
-
+    
     useEffect(() => {
         getData();
     }, []);
-    // console.log(userinfo.name)
+    // console.log(from)
     const splitFullname = userinfo.name ? userinfo.name.split(' ') : ['', ''];
     const splitAddress = userinfo.address ? userinfo.address.split('/') : ['', '', '', '', ''];
     const totalPayment = payment.reduce((total, ord) => total + ord.totalprice, 0);
+    const totalQuantity = payment.reduce((total, ord) => total + ord.quantity, 0);
     const Total = totalPayment.toFixed(decimals);
+
+    // console.log(totalQuantity);
+    const confirmorder = async (cartid, total) => {
+        // console.log(cartid)
+        try{
+            const responsecconfirm = await axios.post('http://localhost:3001/orderconfirm', 
+            { cartid:cartid, total:total});
+            // console.log(responsecconfirm.data.message);
+            alert(responsecconfirm.data.message);
+            window.location.href = "/";
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+
+    const paymentChange = (e) => {
+        const selectedFile = e.target.files[0];
+        setUserfile(selectedFile);
+    }
+    const uploadpayment = async (e) => {
+        e.preventDefault();
+        // console.log(userfile);
+        if(userfile){
+            const formData = new FormData();
+            formData.append('file', userfile);
+            // console.log(formData);
+
+            try{
+                const uploadres = await axios.post('http://localhost:3001/userupload', formData);
+                console.log(uploadres);
+            }
+            catch(err){
+                console.log(err);
+            }
+            
+        }
+    };
 
   return (
     <div className={style.container}>
@@ -113,6 +164,13 @@ function Ordercheck() {
                     </div>
                 </div>
             </div>
+            <div className={style.showpayment}>
+                { choicepayment === "qr" ? (
+                    <img src={paymentchoices.qr}/>
+                ):(
+                    <div>Promt Pay:{paymentchoices.prompt}</div>
+                )}
+            </div>
         </div>
 
         {payment.length > 0 ? (
@@ -129,12 +187,51 @@ function Ordercheck() {
                     </div>
                 ))}
                 <div>
-                    <hr/>
                     Total_PRICE: {Total}
                 </div>
-                <div>
-                    <button>PLACE ORDER</button>
+                <div className={style.paymentchoices}>
+                    <div className={style.title}>
+                        <div>PAYMENT</div>
+                        <hr/>
+                    </div>                 
+                    <form>
+                        <div className={style.choice}>
+                            <input
+                                type='radio'
+                                name='choice'
+                                value='qr' // Set the value of the first radio button
+                                checked={choicepayment === 'qr'} // Check if 'qr' is selected
+                                onChange={handlePaymentChoiceChange} // Call the handler on change
+                            />
+                            <label>QR Code Scan</label>
+                        </div>
+                        <div className={style.choice}>
+                            <input
+                                type='radio'
+                                name='choice'
+                                value='prompt' // Set the value of the second radio button
+                                checked={choicepayment === 'prompt'} // Check if 'prompt' is selected
+                                onChange={handlePaymentChoiceChange} // Call the handler on change
+                            />
+                            <label>Promt pay</label>
+                        </div>
+                    </form>
                 </div>
+                { from === "cart" ? (
+                    <button onClick={() => confirmorder(payment[0].cartid, totalQuantity)}>PLACE ORDER</button>
+                ):(
+                    <div>
+                        <form encType="multipart/form-data">
+                            <input
+                                type='file'
+                                name='file'
+                                onChange={paymentChange}
+                            />
+                            <button onClick={uploadpayment}>Upload_Payment</button>
+                        </form>
+                    </div>
+                )}
+                
             </div>
             ) : (
                 <div>Loading data...</div>

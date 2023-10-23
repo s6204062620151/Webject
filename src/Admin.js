@@ -1,6 +1,6 @@
-// import './App.css';
+import style from "./Admin.module.css";
 import Adminbar from './Components/Adminbar';
-import { BrowserRouter,Routes,Route } from "react-router-dom";
+import { Routes,Route } from "react-router-dom";
 
 import Adminhome from './Components/Adminhome'
 import Adminproductlists from './Components/Adminproductlists'
@@ -10,16 +10,16 @@ import Adminorderlists from './Components/Adminorderlists'
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Adminbar/>
-        <Routes>
-          <Route path="/" element={<Adminhome/>} />
-          <Route path="/Adminaddproduct" element={<Adminaddproduct/>} />
-          <Route path="/Adminproductlists" element={<Adminproductlists/>} />
-          <Route path="/Adminorderlists" element={<Adminorderlists/>} />
-        </Routes>
-      </BrowserRouter>
+    <div className={style.container}>
+        <div className={style.navbar}><Adminbar/></div>
+        <div className={style.content}>
+          <Routes>
+            <Route path="/" Component={Adminhome} />
+            <Route path="/Adminaddproduct" Component={Adminaddproduct} />
+            <Route path="/Adminproductlists" Component={Adminproductlists} />
+            <Route path="/Adminorderlists" Component={Adminorderlists} />
+          </Routes>
+        </div>
     </div>
   );
 }

@@ -7,6 +7,7 @@ function Cart() {
 
   const [valueproducts, setValueproducts] = useState([]);
   const [cartid, setCartid] = useState(0);
+  const [page] = useState('cart');
 
   const getData = async() => {
     try{
@@ -51,7 +52,7 @@ function Cart() {
   const confirm = async () => {
     try{
       const userresponse = await axios.get('http://localhost:3001/getUser', {withCredentials: true});
-      window.location.href = `/ordercheck/${userresponse.data.user.userid}/${cartid}`;
+      window.location.href = `/ordercheck/${userresponse.data.user.userid}/${cartid}/${page}`;
     }
     catch(err){
       console.log(err);

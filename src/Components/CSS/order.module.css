@@ -9,8 +9,14 @@
     display: flex;
 }
 
-.detailed{}
+.detailed{
 
+}
+
+.showpayment > img {
+    width: 10rem;
+    height: 10rem;
+}
 
 .fulladdress{
     text-align: center;
@@ -19,4 +25,8 @@
 
 .paymentdetailed > hr{
     border-top: 1px dashed ;
+}
+
+.paymentchoices > form{
+    background-color: #D9D9D9;
 }
