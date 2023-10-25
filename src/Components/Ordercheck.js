@@ -69,11 +69,14 @@ function Ordercheck() {
         if(userfile){
             const formData = new FormData();
             formData.append('file', userfile);
+            formData.append('cartid', cartid);
             // console.log(formData);
 
             try{
                 const uploadres = await axios.post('http://localhost:3001/userupload', formData);
-                console.log(uploadres);
+                // console.log(uploadres);
+                alert(uploadres.data.message);
+                window.location.href = "/Status";
             }
             catch(err){
                 console.log(err);
