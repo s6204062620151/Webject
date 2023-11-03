@@ -95,9 +95,7 @@ const Adminorderlists = () => {
   return (
     <div className='content'>
       <div className='incontent'>
-        <Form>
           <Table columns={columns} dataSource={data}/>
-        </Form>
       </div>
     </div>
   )
