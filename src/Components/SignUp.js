@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import style from './CSS/signup.module.css';
-import axios from 'axios'
+import axios from 'axios';
 
 const SignUp = () => {
   const [name, setName] = useState('')
@@ -15,14 +16,21 @@ const SignUp = () => {
   const [district, setDistrict] = useState('')
   const [zipcode, setZipcode] = useState('')
   const [message, setMessage] = useState('')
+  var passwordValue = '';
 
   const submit = async (e) => {
     e.preventDefault();
-
+    if(password === confirmpassword){
+      passwordValue = password;
+    }
+    else if (password !== confirmpassword){
+      setMessage("Password don't match with Confirmpassword!")
+    }
+    console.log(passwordValue)
     try{
       const response = await axios.post('http://localhost:3001/signup',{data :{
         email: email,
-        password: password,
+        password: passwordValue,
         name: name+' '+surname,
         phone_number: phonenumber,
         address: housenumber+'/'+province+'/'+city+'/'+district+'/'+zipcode,
@@ -79,6 +87,7 @@ const SignUp = () => {
               // '(?=.*[A-Za-z])(?=.*\d).{8,}' 
               title='' 
               placeholder='a-z จำนวน 4 ตัว และตัวเลข 4 ตัว'
+              required
               value={password}
               onChange={(e) => setPassword(e.target.value)}/>
           </div>
@@ -88,7 +97,8 @@ const SignUp = () => {
               type="text" 
               id="signup-housenumber" 
               pattern='^[0-9]{3,10}' 
-              placeholder='start with 02' 
+              placeholder='start with 02'
+              required 
               value={housenumber}
               onChange={(e) => setHousenumber(e.target.value)}/>
           </div>
@@ -97,6 +107,7 @@ const SignUp = () => {
             <input 
               type="text" 
               id="signup-city"
+              required
               value={city}
               onChange={(e) => setCity(e.target.value)}/>
           </div>
@@ -108,6 +119,7 @@ const SignUp = () => {
               pattern='[0-9]{4}' 
               title='' 
               placeholder='ตัวเลข 4 ตัว' 
+              required
               value={zipcode}
               onChange={(e) => setZipcode(e.target.value)}/>
           </div> 
@@ -120,7 +132,8 @@ const SignUp = () => {
               id="signup-surname" 
               pattern='^[A-Z]{1}[a-z]+' 
               title='' 
-              placeholder='ขึ้นต้นด้วยตัวพิมพ์ใหญ่' 
+              placeholder='ขึ้นต้นด้วยตัวพิมพ์ใหญ่'
+              required 
               value={surname}
               onChange={(e) => setSurname(e.target.value)}/>
           </div>
@@ -132,6 +145,7 @@ const SignUp = () => {
               pattern='[0-9]{10}' 
               title='' 
               placeholder='ตัวเลข 10 ตัว'
+              required
               value={phonenumber}
               onChange={(e) => setPhonenumber(e.target.value)}/>
           </div>
@@ -141,6 +155,7 @@ const SignUp = () => {
               type="password" 
               id="signup-confirmpassword" 
               placeholder='a-z จำนวน 4 ตัว และตัวเลข 4 ตัว'
+              required
               value={confirmpassword}
               onChange={(e) => setConfirmpassword(e.target.value)}/>
           </div>
@@ -149,6 +164,7 @@ const SignUp = () => {
             <input 
               type="text" 
               id="signup-province"
+              required
               value={province}
               onChange={(e) => setProvince(e.target.value)}/>
           </div>
@@ -157,8 +173,10 @@ const SignUp = () => {
             <input 
               type="text" 
               id="signup-district"
+              required
               value={district}
-              onChange={(e) => setDistrict(e.target.value)}/>
+              onChange={(e) => setDistrict(e.target.value)}
+            />
           </div>
         </div>
       </div>
@@ -167,6 +185,10 @@ const SignUp = () => {
       </div>
 
       <div className={style.message}>{message}</div>
+      <div className={style.signinref}>
+        Do you already have an account?
+        <Link to="/">SignIn</Link>
+      </div>
     </form>
   )
 }

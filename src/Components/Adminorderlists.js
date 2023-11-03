@@ -6,9 +6,11 @@ import './CSS/Admin.css'
 const Adminorderlists = () => {
 
   const [data, setData] = useState([]);
+  const [showpicture, setShowpicture] = useState('');
 
   useEffect(() => {
     fectedData();
+    // console.log(data[0].payment_status)
   }, []);
 
   const fectedData = () => {
@@ -51,6 +53,13 @@ const Adminorderlists = () => {
       console.error('Error updating order status:', error);
     });
   }
+  const handleShowpayment = (picture) => {
+    // console.log(picture);
+    setShowpicture(picture);
+    if(showpicture!==''){
+      setShowpicture('');
+    }
+  }
 
   const columns = [
     {
@@ -62,6 +71,20 @@ const Adminorderlists = () => {
       title: 'Picture',
       dataIndex: 'qr_picture',
       key: 'qr_picture',
+      render: (text,record)=>(
+        <div>
+          {record.qr_picture !== '' ?(
+            <div>
+              <Button onClick={() => handleShowpayment(record.qr_picture)}>Show_Payment</Button>
+              {
+                showpicture !== ''?(
+                <img src={'./Image/user-upload/'+showpicture} className='payment_picture'/>
+                ):(null)
+              }
+            </div>
+          ):<div>Unuploaded</div>}
+        </div>
+      )
     },
     {
       title: 'Date',
@@ -84,8 +107,12 @@ const Adminorderlists = () => {
       key: 'actions',
       render: (text,record)=>(
         <div>
-          <Button type="primary" onClick={() => handleApprove(record.cartid)}>Aprrove</Button>
-          <Button type="primary" onClick={() => handleReject(record.cartid)} danger>Reject</Button>
+          {record.payment_status !== 'yes' ? ( 
+            <div>
+              <Button type="primary" onClick={() => handleApprove(record.cartid)}>Approve</Button>
+              <Button type="primary" onClick={() => handleReject(record.cartid)} danger>Reject</Button>
+            </div>
+          ) : <div> Approve Success! </div>}
         </div>
       )
     },
