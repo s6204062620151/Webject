@@ -1,13 +1,15 @@
+
 .container{
-    width: 33.75rem;
-    height: 18.75rem;
+    width: 20.75rem;
+    height: 25.75rem;
     background-color: #D9D9D9;
-    border-radius: 1.875rem;
+    border-radius: 0.75rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
 }
+
 .inputForm{
     text-align: center;
 }

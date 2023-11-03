@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes,useLocation } from 'react-router-dom';
 import style from './App.module.css';
 import Navbar from './Components/Navbar';
 import Searchbar from './Components/Searchbar'
@@ -26,10 +26,15 @@ import Searchproduct from './Components/Searchproduct';
 
 function App() {
 
+  const location = useLocation();
+  const isSignInSignUpPage = location.pathname.includes('/SignIn') || location.pathname.includes('/SignUp');
+  console.log(isSignInSignUpPage)
   return (
     <div className={style.container}>
       <div className={style.searchbar}><Searchbar/></div>
-      <div className={style.navbar}><Navbar/></div>
+      {!isSignInSignUpPage && <div className={style.navbar}><Navbar/></div>}
+      <div className={style.content}></div>
+      {/* <div className={style.navbar}><Navbar/></div> */}
       <div className={style.content}>
         <Routes>
           <Route path="/" Component={Home}/>
@@ -54,8 +59,13 @@ function App() {
           <Route path="/searchproduct/:searchkey" Component={Searchproduct}/>
         </Routes>
       </div>
+      <div>
+      {!isSignInSignUpPage && <footer className={style.footer}><Footer/></footer>}
+      </div>
       
-      <footer className={style.footer}><Footer/></footer>
+      {/* <footer className={style.footer}><Footer/></footer> */}
+
+
     </div>
   );
 }

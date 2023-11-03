@@ -1,5 +1,5 @@
 nav{
-    background-color: #D9D9D9;
+    background-color: #f1f1f1;
 }
 
 .Navmenu{
@@ -24,32 +24,26 @@ nav{
 .Navmenu .categoryMenu{
     display: flex;
     margin: 0rem;
-    color: white;
-    background-color: #1B1B45;
+    color: hsl(0, 0%, 0%);
     padding: 1.5rem .625rem;
     position: absolute;
 }
 
-.dropdownmenu li{
+.dropdownmenu li {
     padding: 1rem;
     list-style: none;
-    background-color: #1B1B45;
+    background-color: #f1f1f1;
+    font-size: 0.625rem;
+    
 }
 .dropdownmenu li > a{
-    color: white;
-    font-weight: bold;
+    color: hsl(0, 0%, 0%);
     text-decoration: none;
 }
 
 .dropdownmenu{
     position: absolute;
     top: 11rem;
-}
-
-.logo {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: .375rem;
 }
 
 .accountmanage{

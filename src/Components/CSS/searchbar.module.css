@@ -19,6 +19,7 @@
     margin: 0;
     box-sizing: border-box;
     border-radius: 25px;
+    border-color: palevioletred;
     outline: none;
 }
 

@@ -39,7 +39,7 @@ function SignIn() {
       <label className={style.title}>Sign In</label>
       <form className={style.inputForm}>
         <div className={style.inputemail}>
-          <label>Email :</label>
+          <label>Email : </label>
           <input
             type='text'
             value={email}
@@ -47,7 +47,7 @@ function SignIn() {
           />
         </div>
         <div className={style.inputpassword}>
-          <label>Password :</label>
+          <label>Password : </label>
           <input
             type='password'
             value={password}

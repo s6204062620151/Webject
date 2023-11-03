@@ -116,6 +116,7 @@ const Home = () => {
 
   return (
     <div className={style.container}>
+      <div className={style.header}>Top seller<hr/></div>
       <div className={style.topSell}>
           <div className={style.bestsell} onClick={() => selectedproduct(bestsellproduct.id1)}>
             <img src={'./Image/image/'+bestproductimg.picture1} alt={`${bestsellproduct.name1} Image`} className={style.img}/>            
@@ -189,8 +190,8 @@ const Home = () => {
         </div>
       </div>
 
+      <div className={style.header}>Products<hr/></div>
       <div className={style.containerProduct}>
-        <div className={style.header}>Products<hr/></div>
         <div className={style.showProduct}>
           <div className={style.product}>
             <img 
