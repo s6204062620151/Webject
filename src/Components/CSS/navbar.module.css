@@ -1,70 +1,111 @@
-nav{
-    background-color: #f1f1f1;
+nav{    
+    background: #c0c0c0;
+    margin: 0 auto;
+    height: 80px;
 }
 
-.Navmenu{
+.Navmenu {
     display: flex;
-    position: relative;
+    margin-left: 2rem;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding-right: 2rem;
 }
-.Navmenu li{
-    margin: 1.775rem 0rem 1.775rem 6rem;
-    list-style: none;
+
+.navlink {
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding-right: 5rem ;
 }
-.Navmenu li, .Navmenu li > a {
-    text-decoration: none;
+
+.navlink > li {
+    display: flex;
+    padding-right: 2rem ;
+}
+
+a {
     color: black;
-    font-weight: bold;
-    font-size: 0.625rem;
 }
-.navlink{
-    display: flex;
-    margin-left: 1.25rem;
+.categoryMenu {
+    display:flex;
 }
 
-.Navmenu .categoryMenu{
-    display: flex;
-    margin: 0rem;
-    color: hsl(0, 0%, 0%);
-    padding: 1.5rem .625rem;
-    position: absolute;
+.mobileMenu {
+    display:none;
+    padding-left: 6rem;
 }
 
-.dropdownmenu li {
+
+.categoryMenu > a {
+    cursor: pointer;
+}
+
+.dropdownmenu > li{
     padding: 1rem;
     list-style: none;
-    background-color: #f1f1f1;
-    font-size: 0.625rem;
-    
+    background-color: #c0c0c0;
 }
-.dropdownmenu li > a{
-    color: hsl(0, 0%, 0%);
+.dropdownmenu li > a {
+    color: black;
+    font-size: 12px;
     text-decoration: none;
 }
 
 .dropdownmenu{
     position: absolute;
-    top: 11rem;
+    top: 10rem;
 }
 
 .accountmanage{
     display: flex;
 }
 
-@media screen and (min-width: 768px) {
-    .Navmenu li{
-        margin-left: 8rem;
+
+@media screen and (max-width:480px) {
+    .Nav {
+        background: #c0c0c0;
+        margin: 0 auto;
+    }
+    .Navmenu {
+        display: flex;
+        height: 80px;
+        padding-right: 2rem ;
+        
+    }
+    
+    .navlink {
+        display: flex;
+        height: 80px;
+        list-style-type: none;
     }
 
-    .Navmenu li, .Navmenu li > a{
-        font-size: 0.813rem;
+    .navlink > li {
+        padding-left: 2rem;
+        font-size: 14px;
     }
 
-    .dropdownmenu{
-        top: 11rem;
+    .categoryMenu > a {
+        display:none;
     }
+
+    .mobileMenu {
+        display: contents;
+        color: black;
+    }
+
+    /* .accountmanage {
+        display:flex;
+        justify-content: right;
+    } */
+
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
     .Navmenu li{
         margin-left: 12rem;
     }
@@ -86,6 +127,6 @@ nav{
     .Navmenu li, .Navmenu li > a{
         font-size: 0.938rem;
     }
-}
+} */
 
 

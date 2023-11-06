@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.navbar {
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-top: 0.625rem;
+}
+
+.footer {
+    position: absolute;
+    height: auto;
+    bottom: 0;
+    width: 100%;
+}

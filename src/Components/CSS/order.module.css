@@ -1,0 +1,79 @@
+.container{
+    border: 2rem 2rem;
+    display: flex;
+}
+
+.usercontent{
+    /* margin-right: 2.5rem; */
+}
+.userdetailed, .addressdetailed{
+    display: flex;
+}
+
+.detailed{
+    padding: 0.5rem;
+}
+
+.showpayment > img {
+    width: 10rem;
+    height: 10rem;
+}
+
+.fulladdress{
+    /* text-align: center; */
+    margin-top: 0.625rem;
+}
+
+.addressdetailed > input{
+    width: 50%;
+}
+
+.paymentdetailed > hr{
+    border-top: 1px dashed ;
+}
+
+
+@media screen and (max-width:480px) {
+    .container {
+        border: 2rem 2rem;
+        display: block;
+    }
+
+    .secondSection {
+        padding-top: 2rem;
+    }
+
+    .showpayment {
+        padding-top: 1rem;
+    }
+
+    .detailed > input {
+        border: rgb(189, 189, 189) solid;
+        border-width: 0.2px;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+    }
+    .header , .title {
+        padding-bottom: 1rem;
+    }
+    .paymentdetailed {
+        padding-bottom: 0.5rem;
+    }
+
+    .showpayment {
+        padding-bottom: 5rem;
+    }
+
+    .choice {
+        padding: 0.5rem;
+    }
+
+    .choice > label {
+        padding: 1rem;
+    }
+
+    .choice > input {
+        background-color: #eee;
+        border-radius: 50%;
+    }
+} 

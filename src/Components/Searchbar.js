@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import style from './CSS/searchbar.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -24,9 +26,11 @@ function Searchbar() {
                   <div className={style.inputSearch}>
                     <input 
                       placeholder="What's you looking for ?"
-                      onChange={(e) => setSearchkey(e.target.value)}/>
-                  <div>
-                  <button onClick={seach}>SEARCH</button>
+                      onChange={(e) => setSearchkey(e.target.value)}
+                      />
+                  <div className={style.searchBtn}>
+                  <button onClick={seach}>SEARCH
+                  </button>
                 </div> 
             </div>
     </div>

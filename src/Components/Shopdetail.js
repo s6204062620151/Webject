@@ -35,7 +35,7 @@ function Shopdetail() {
         rec5picture: recproductres.data.rec5.picture,
       });
     }catch (error) {
-      console.error(error);
+      console.log(error);
     }
   }
 

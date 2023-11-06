@@ -15,7 +15,8 @@ function Searchproduct() {
         alert("Not found product math!");
         window.location.href = '/';
       }
-      setProduct(response.data[0]);
+      //console.log(response.data);
+      setProduct(response.data);
     }catch (error) {
       console.error(error);
     }
@@ -24,7 +25,7 @@ function Searchproduct() {
   useEffect(() => {
     getData();
   }, []);
-  console.log(product)
+  //console.log(product)
 
   const selectedproduct = async (productid) =>{
     window.location.href = `/shopdetail/${productid}`;
@@ -32,11 +33,13 @@ function Searchproduct() {
 
   return (
     <div className={style.container}>
-        <div className={style.product} onClick={() => selectedproduct(product.productid)}>
+      {product.map((product, index) => (
+        <div key={index} className={style.product} onClick={() => selectedproduct(product.productid)}>
           <img src={`${process.env.PUBLIC_URL}/Image/image/${product.picture}`} alt={`Search product Image`}/>
           <div>{product.name}</div>
           <div>{product.price}</div>
         </div>
+        ))}
     </div>
   )
 }

@@ -1,11 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import style from './CSS/cart.module.css';
+import { useNavigate } from 'react-router-dom';
 
 function Cart() {
 
   const [valueproducts, setValueproducts] = useState([]);
   const [cartid, setCartid] = useState(0);
+  const [page] = useState('cart');
 
   const getData = async() => {
     try{
@@ -13,9 +15,16 @@ function Cart() {
       const cartresponse = await axios.post('http://localhost:3001/getcart',
       {userid: userresponse.data.user.userid});
       // console.log(cartresponse.data);
-      setValueproducts(cartresponse.data);
-      setCartid(cartresponse.data[0].cartid)
-      // console.log(cartid)
+      
+      if(cartresponse.data.length === 0){
+        alert("Cart is Empty!");
+        window.location.href = '/';
+      }
+      else{
+        setValueproducts(cartresponse.data);
+      }
+      setCartid(cartresponse.data[0].cartid);
+      //console.log(cartresponse.data)
     }
     catch(err){
       console.log(err);
@@ -39,6 +48,18 @@ function Cart() {
     }
   }
 
+  const navigation = useNavigate();
+  const confirm = async () => {
+    try{
+      const userresponse = await axios.get('http://localhost:3001/getUser', {withCredentials: true});
+      window.location.href = `/ordercheck/${userresponse.data.user.userid}/${cartid}/${page}`;
+    }
+    catch(err){
+      console.log(err);
+    }
+
+  }
+
   // console.log(valueproducts)
 
   return (
@@ -46,13 +67,16 @@ function Cart() {
       <div className={style.productTable}>
         <div className={style.header}>Product In Cart {cartid}.<hr/></div>
         <table>
-          <tr>
-            <th>ProductId</th>
-            <th>ProductName</th>
-            <th>Quantity</th>
-            <th>Total_price</th>
-            <th>DELETE</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>ProductId</th>
+              <th>ProductName</th>
+              <th>Quantity</th>
+              <th>Total_price</th>
+              <th>DELETE</th>
+            </tr>
+          </thead>
+          <tbody>
           {valueproducts.map((product, index) => (
           <tr key={index}>
             <td>{product.productid}</td>
@@ -60,15 +84,18 @@ function Cart() {
             <td>{product.quantity}</td>
             <td>{product.totalprice+' $'}</td>
             <td>
-              <button onClick={() => deleteproduct(product.productid, product.id)}>DELETE</button>
+              <div className={style.cartBtn}>
+                <button onClick={() => deleteproduct(product.productid, product.id)}>DELETE</button>
+              </div>
             </td>
           </tr>
           ))}
+          </tbody>
         </table>
       </div>
 
       <div className={style.submitbtn}>
-            <button>Confirm Order</button>
+            <button onClick={() => confirm()}>Confirm Order</button>
       </div>
     </div>
   )

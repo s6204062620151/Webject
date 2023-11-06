@@ -2,6 +2,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import style from './CSS/account.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+
 function Account() {
   const [auth, setAuth] = useState(false);
   const [name, setName] = useState('');
@@ -27,7 +30,7 @@ function Account() {
 
   const signOut = () => {
     Cookies.remove('token');
-    window.location.href = '/Signin';
+    window.location.href = '/';
   }  
   
   return (
@@ -38,12 +41,20 @@ function Account() {
         <div className={style.content}>
           {auth ? (
             <div className={style.info}>
-              <div>You are {name}.</div>
-              <button onClick={signOut}>Sign Out!</button>
+                <div className={style.name}> {name} </div>
+
+                <div className={style.signout}> 
+                  <button onClick={signOut}>Sign Out
+                    <f><FontAwesomeIcon icon={faArrowRightFromBracket} /></f>
+                  </button>
+                </div>
+
             </div>
           ) : (
-            <div>
-              <button onClick={signOut}>Sign Out!</button>
+            <div className={style.signout}>
+              <button onClick={signOut}>Sign Out!
+                <f><FontAwesomeIcon icon={faArrowRightFromBracket} /></f>
+              </button>
             </div>
           )}
         </div>

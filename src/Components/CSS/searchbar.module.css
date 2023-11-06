@@ -13,7 +13,7 @@
     align-items: center; 
 }
 
-.inputSearch input {
+/* .inputSearch input {
     width: 20rem;
     padding: 0.5rem 1rem;
     margin: 0;
@@ -21,18 +21,54 @@
     border-radius: 25px;
     border-color: palevioletred;
     outline: none;
-}
+} */
 
-.inputSearch button {
+/* .inputSearch button {
     font-family: 'Poppins', sans-serif;
     padding: 0.75rem;
     margin: 1.5rem;
     border-radius: 25px;
-}
+} */
 
 .logo {
-    /* display: flex;
-    align-items: center;  */
     width: 5rem;
     cursor: pointer;
+}
+
+@media screen and (max-width:480px) {
+    /* button {
+        display: none;
+    } */
+
+    .inputSearch{
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+    }
+
+    .inputSearch input {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        margin: 0;
+        box-sizing: border-box;
+        border-radius: 25px;
+        border-style: groove;
+        border-width: 0.1rem;
+        outline: none;
+        border-color: rgb(172, 172, 172);
+    }
+    .searchBtn  {
+        padding: 0.5rem 2rem;
+    }
+
+    .searchBtn > button {
+        font-family: 'Poppins', sans-serif;
+        border: none;
+        background-color: pink;
+        border-radius: 25px;
+        padding:0.5rem;
+    }
+
 }

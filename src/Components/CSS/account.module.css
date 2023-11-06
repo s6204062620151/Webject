@@ -1,3 +1,58 @@
-.info{
+/* .info {
     display: flex;
-}
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    padding-right: 2rem;
+} */
+
+/* button > f {
+    padding-left : 2rem;
+} */
+
+/* .info > .name {
+    padding: 2rem;
+} */
+
+/* button {
+    display: flex;
+    align-items: center;
+    padding:0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+} */
+
+@media screen and (max-width:480px) {
+    .info {
+        display: flex;
+        justify-content: right;
+        height: 80px;
+        align-items: center;
+        padding-right: 2rem;
+    }
+    
+    button > f {
+        padding-left : 1rem;
+    }
+    
+    .info > .name {
+        padding: 2rem;
+    }
+
+    .signout{
+        display: flex;
+        padding: 0.1rem;
+    }
+
+    .signout > button {
+        width: 7rem;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 25px;
+        border-width: 0.1rem;
+        padding: 0.1rem;
+    }
+
+    .name {
+        display: none;
+    }
+} 

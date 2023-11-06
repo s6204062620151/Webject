@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import style from './CSS/navbar.module.css';
 import Account from './Account';
 import { useCookies } from 'react-cookie';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars , faHouse } from '@fortawesome/free-solid-svg-icons'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,18 +14,21 @@ function Navbar() {
         setIsOpen(!isOpen);
     };
 
-    const isSignin = !!cookies.token;
+  const isSignin = !!cookies.token;
   return (
     <nav>
         <ul className={style.Navmenu}>
             <li className={style.categoryMenu} onClick={toggleDropdown}>
-
-              <div>categories</div>
+              <a>categories</a>
+                <div className={style.mobileMenu}>
+                  <FontAwesomeIcon icon={faBars} />
+                </div>
             </li>
             <div className={style.navlink}>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/Status">Status</Link></li>
               <li><Link to="/Cart">Cart</Link></li>
+
               <div className={style.accountmanage}>
                 {isSignin ? (
                   <li><Account/></li>
@@ -35,7 +40,6 @@ function Navbar() {
                 )}
               </div>
             </div>
-            
         </ul>
         {isOpen && (
           <ul className={style.dropdownmenu}>
@@ -52,6 +56,7 @@ function Navbar() {
             <li><Link to="/shirt">Shirt</Link></li>
             <li><Link to="/sweater">Sweater</Link></li>
             <li><Link to="/tshirt">T-shirt</Link></li>
+            <li></li>
           </ul>
         )}
         

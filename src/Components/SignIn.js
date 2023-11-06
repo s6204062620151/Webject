@@ -7,6 +7,7 @@ function SignIn() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
 
   axios.defaults.withCredentials = true;
   const SignIn = async (e) =>{
@@ -17,17 +18,17 @@ function SignIn() {
         email: email,
         password: password
       })
-      console.log(response.data.token);
-      console.log(response.data.exp);
+      // console.log(response.data.token);
+      // console.log(response.data.exp);
       if(response.data.message === "SignIn Successful!"){
         //console.log(1)
         //localStorage.setItem('token', response.data.token);
         //console.log(2)
         alert(response.data.message);
-        window.location.href = '/';
       }
       else{
         alert(response.data.message);
+        setMessage(response.data.message);
       }
     } catch(err){
       console.log(err);
@@ -39,22 +40,30 @@ function SignIn() {
       <label className={style.title}>Sign In</label>
       <form className={style.inputForm}>
         <div className={style.inputemail}>
-          <label>Email : </label>
-          <input
-            type='text'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          {/* <label>Email : </label> */}
+          <div className={style.emailInput}>
+            <input
+              placeholder='Email'
+              type='text'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          
         </div>
         <div className={style.inputpassword}>
-          <label>Password : </label>
-          <input
-            type='password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          {/* <label>Password : </label> */}
+          <div className={style.passwordInput}>
+            <input
+              placeholder='Password'
+              type='password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
         </div>
-        <button className={style.signinbtn} onClick={SignIn}>Sign in</button>
+        <div>{message}</div>
+            <button className={style.signinbtn} onClick={SignIn}>Sign in</button>
       </form><br/>
       <div className={style.signupref}>
         You don't have an account yet?

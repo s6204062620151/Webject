@@ -1,12 +1,91 @@
 table, th, td {
-    border: 0.063rem solid black;
+    padding: 0.2rem;
+    border: 0.063rem groove rgb(204, 204, 204);
     text-align: center;
+    
 }
 
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
 table{
+    border-collapse: collapse;
     margin-bottom: 0.625rem;
 }
 
 .header{
     margin-bottom: 0.625rem;
+}
+
+th {
+    background-color:pink;
+}
+
+/* moblie */
+
+@media screen and (max-width:480px) { 
+    .container {
+        padding: 2rem 2rem;
+    }
+    
+    table, th, td {
+        padding: 0.2rem;
+        border: 0.063rem groove rgb(204, 204, 204);
+        text-align: center;
+        
+    }
+    
+    .header {
+        padding-bottom: 2rem;
+        font-size: 17px;
+    }
+    tr:nth-child(even){background-color: #f2f2f2;}
+    
+    /* tr:hover {background-color: #ddd;} */
+    
+    table{
+        border-collapse: collapse;
+        margin-bottom: 0.625rem;
+    }
+    
+    .header{
+        margin-bottom: 0.625rem;
+    }
+    
+    th {
+        background-color:pink;
+    }
+
+    .statusBtn {
+        align-items: center;
+    }
+
+    tr > th {
+        font-size: 14px;
+    }
+
+    td {
+        font-size: 12px;
+    }
+
+    .cartBtn > button {
+        font-family: 'Poppins', sans-serif;
+        border-width: 0.1rem;
+        border-radius: 20px;
+        border: none;
+        padding:0.5rem;
+        background-color: antiquewhite;
+    }
+
+    .submitbtn > button {
+        font-family: 'Poppins', sans-serif;
+        background-color: pink;
+        color: rgb(0, 0, 0);
+        border-radius: 25px;
+        border:none;
+        padding: 0.5rem;
+    }
+    
+
 }
