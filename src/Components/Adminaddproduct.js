@@ -136,9 +136,9 @@ const Adminaddproduct = () => {
               <Option value="dress">Dress</Option>
               <Option value="pajamas">Pajamas</Option>
               <Option value="shirt">Shirt</Option>
-              <Option value="legging">Legging</Option>
-              <Option value="hoddie">Hoddie</Option>
-              <Option value="pants">Pants</Option>
+              <Option value="long pant">Long Pant</Option>
+              <Option value="hoddie set">Hoddie</Option>
+              <Option value="pant">Pants</Option>
               <Option value="-">-</Option>
             </Select>
 

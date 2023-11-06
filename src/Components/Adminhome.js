@@ -10,6 +10,7 @@ ChartJS.register(CategoryScale,LinearScale,BarElement,Title,Tooltip,Legend);
 const Adminhome = () => {
 
   const [data, setData] = useState([]);
+  const [bestproduct, setBestproduct] = useState([])
 
   useEffect(() => {
     axios.get('http://localhost:3001/monthlysale')
@@ -19,13 +20,24 @@ const Adminhome = () => {
           key: index,
         }));
         setData(formattedData);
-        console.log(data); 
+        console.log(data);
+        console.log(response); 
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+    
+    axios.get('http://localhost:3001/bestSell')
+      .then((bestreponse) => {
+        // console.log(bestreponse.data.product1);
+        setBestproduct(bestreponse.data.product1);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
   }, []);
 
+    console.log(bestproduct)
 
     const chartData = {
       labels: data.map(item => item.month), // Use 'month' as labels
@@ -64,15 +76,15 @@ const Adminhome = () => {
       <div className='card-container'>
 
         <div className='card'>
-            <h2>Top Products :</h2>
+            <h2>Top Products : {bestproduct.name}</h2>
         </div>
 
         <div className='card'>
-            <h2>Total Products :</h2>
+            <h2>Total Products : {bestproduct.sumquantity} Unit</h2>
         </div>
 
         <div className='card'>
-            <h2>Income :</h2>
+            <h2>Total Sales : {bestproduct.total_quantity} Unit</h2>
         </div>
         
       </div>

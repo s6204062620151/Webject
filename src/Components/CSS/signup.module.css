@@ -65,3 +65,13 @@ label {
     text-align: center;
     margin-top: 1rem;
 }
+
+.signinref{
+    font-size: 0.688rem;
+    text-align: center;
+}
+.signinref a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}

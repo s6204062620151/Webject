@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import style from './CSS/signin.module.css';
-import axios from 'axios'
+import axios from 'axios';
 
 function SignIn() {
 
