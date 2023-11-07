@@ -74,8 +74,10 @@ function Shopdetail() {
               <div>{"$ "+productselected.price}</div>
               <div>{"Size: "+productselected.size}</div>
               <div>{"Color: "+productselected.color}</div>
+
               <div>
                 <input
+
                     type='number'
                     min="1"
                     max="99"
@@ -102,7 +104,9 @@ function Shopdetail() {
         </div>
 
           <div className={style.otherproduct}>
-            <div>Other May You Like<hr/></div>
+              <div className={style.otherheader}>
+                <div>Other May You Like<hr/></div>
+              </div>
               <div className={style.productall}>
                 <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec1id)}>
                   <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec1picture}`} alt={`Pajamas Image`} />
@@ -115,9 +119,6 @@ function Shopdetail() {
                 </div>
                 <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec4id)}>
                   <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec4picture}`} alt={`Pajamas Image`} />
-                </div>
-                <div className={style.oterproduct} onClick={() => selectedproduct(recproducts.rec5id)}>
-                  <img src={`${process.env.PUBLIC_URL}/Image/image/${recproducts.rec5picture}`} alt={`Pajamas Image`} />
                 </div>
               </div>
           </div>

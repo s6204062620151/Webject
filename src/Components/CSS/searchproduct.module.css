@@ -1,7 +1,17 @@
+.container {
+    display: flex;
+}
+
 .product img{
     width: 6rem;
     height: 10rem;
 }
 .product{
     text-align: center;
+}
+
+.categoryname {
+    padding-bottom: 2rem;
+    font-size: 11px;
+    padding: 0rem 2.5rem;
 }

@@ -37,8 +37,8 @@ function Pant() {
         <div key={index} className={style.product}
         onClick={() => selectedproduct(product.productid)}>
           <img src={'./Image/image/'+product.picture} alt={`dress Image`}/>
-          <div>{product.name}</div>
-          <div>{product.price}</div>
+          <div className={style.categoryname}>{product.name}</div>
+          {/* <div>{product.price}</div> */}
         </div>
       ))}
     </div>

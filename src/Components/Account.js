@@ -44,7 +44,8 @@ function Account() {
                 <div className={style.name}> {name} </div>
 
                 <div className={style.signout}> 
-                  <button onClick={signOut}>Sign Out
+                  <button onClick={signOut}>
+                    <label>Sign Out</label>
                     <f><FontAwesomeIcon icon={faArrowRightFromBracket} /></f>
                   </button>
                 </div>
@@ -52,7 +53,8 @@ function Account() {
             </div>
           ) : (
             <div className={style.signout}>
-              <button onClick={signOut}>Sign Out!
+              <button onClick={signOut}>
+                <label>Sign Out!</label>
                 <f><FontAwesomeIcon icon={faArrowRightFromBracket} /></f>
               </button>
             </div>
