@@ -35,9 +35,9 @@ function Searchproduct() {
     <div className={style.container}>
       {product.map((product, index) => (
         <div key={index} className={style.product} onClick={() => selectedproduct(product.productid)}>
-          <img src={`${process.env.PUBLIC_URL}/Image/image/${product.picture}`} alt={`Search product Image`}/>
-          <div>{product.name}</div>
-          <div>{product.price}</div>
+          <img src={`${process. env.PUBLIC_URL}/Image/image/${product.picture}`} alt={`Search product Image`}/>
+          <div className={style.categoryname}>{product.name}</div>
+          {/* <div>{product.price}</div> */}
         </div>
         ))}
     </div>

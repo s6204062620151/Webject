@@ -1,7 +1,7 @@
 .signup {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    /* margin: 10px; */
 }
 
 .signuptopic {
@@ -11,7 +11,7 @@
 
 .signupform {
     padding: auto;
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(223, 179, 179);
     border-radius: 5px;
 }
 
@@ -19,9 +19,8 @@ label {
     text-align: center;
 }
 .signupcontainer > div {
-    margin: 10px;
+    margin: 20px;
     padding: 6px;
-    border: 1px black solid;
     border-radius: 4px;
 }
 
@@ -30,7 +29,10 @@ label {
 }
 
 .signup-component, .signupcontainer div > input  {
-    background-color: rgb(209, 209, 209);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border-width: 0.1rem;
+    
 }
 
 .signup-header {
@@ -74,4 +76,92 @@ label {
     text-decoration: none;
     font-weight: bold;
     color: black;
+}
+
+
+
+@media screen and (max-width:480px) {
+    .signup {
+        display: block;
+        justify-content: center;
+    }
+    
+    .signuptopic {
+        margin: 10px;
+        text-align: center;
+    }
+    
+    .signupform {
+        padding: 2rem 4rem;
+        background-color: rgb(223, 179, 179);
+        border-radius: 25px;
+    }
+    
+    label {
+        text-align: center;
+    }
+
+    .signupcontainer > div {
+        margin: 20px;
+        padding: 6px;
+        border-radius: 4px;
+    }
+    
+    .signupcontainer {
+        margin: 3px;
+    }
+    
+    .signup-component, .signupcontainer div > input  {
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        border-width: 0.1rem;
+        
+    }
+    
+    .signup-header {
+        width: 300px;
+        border: none;
+    }
+    
+    .signup-input {
+        width: 300px;
+        border: none;
+    }
+
+    .btncontainer > button {
+        display: block;
+        justify-content: center;
+        height: 45px;
+        align-items: center;
+        color: rgb(0, 0, 0);
+        background-color: pink;
+        border-width: 0.2rem;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 0.5rem 2rem;
+    }
+    
+    .message{
+        color: green;
+        font-weight:  bold;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+    .signinref{
+        font-size: 0.688rem;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+    .signinref a{
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        padding-right: 0.5rem;
+    }
+
+    .signupinput > div {
+        padding-bottom: 1rem;
+    }
+    
 }

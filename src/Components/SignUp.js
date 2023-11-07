@@ -53,7 +53,7 @@ const SignUp = () => {
       <div className={style.signuptopic}>SignUp</div>
       <div className={style.signup}>
         <div className={style.signupcontainer}>
-          <div>
+          <div className={style.signupinput}>
             <div>Name</div>
             <input 
               type="text" 
@@ -65,7 +65,7 @@ const SignUp = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}/>
           </div>
-          <div>
+          <div className={style.signupinput}>
             <div>Email</div>
             <input 
               type="email" 
@@ -78,7 +78,7 @@ const SignUp = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}/>
           </div>
-          <div>
+          <div className={style.signupinput}>
             <div>Password</div>
             <input 
               type="password" 
@@ -91,7 +91,7 @@ const SignUp = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}/>
           </div>
-          <div>
+          <div className={style.signupinput}>
             <div>House number</div>
             <input 
               type="text" 
@@ -102,7 +102,7 @@ const SignUp = () => {
               value={housenumber}
               onChange={(e) => setHousenumber(e.target.value)}/>
           </div>
-          <div>
+          <div className={style.signupinput}>
             <div>City</div>
             <input 
               type="text" 
@@ -111,7 +111,7 @@ const SignUp = () => {
               value={city}
               onChange={(e) => setCity(e.target.value)}/>
           </div>
-          <div>
+          <div className={style.signupinput}>
             <div>zip code</div>
             <input 
               type="text" 
@@ -125,7 +125,7 @@ const SignUp = () => {
           </div> 
         </div>
         <div className={style.signupcontainer}>
-          <div>
+          <div className={style.signupinput}>
             <div>Surname</div>
             <input 
               type="text" 
@@ -137,7 +137,7 @@ const SignUp = () => {
               value={surname}
               onChange={(e) => setSurname(e.target.value)}/>
           </div>
-          <div>
+          <div className={style.signupinput}>
             <div>Phone number</div>
             <input 
               type="text" 
@@ -149,7 +149,7 @@ const SignUp = () => {
               value={phonenumber}
               onChange={(e) => setPhonenumber(e.target.value)}/>
           </div>
-          <div>
+          <div className={style.signupinput}>
             <div>Confirm password</div>
             <input 
               type="password" 
@@ -159,7 +159,7 @@ const SignUp = () => {
               value={confirmpassword}
               onChange={(e) => setConfirmpassword(e.target.value)}/>
           </div>
-          <div>
+          <div className={style.signupinput}>
             <div>Province</div>
             <input 
               type="text" 
@@ -168,7 +168,7 @@ const SignUp = () => {
               value={province}
               onChange={(e) => setProvince(e.target.value)}/>
           </div>
-          <div>
+          <div className={style.signupinput}>
             <div>District</div>
             <input 
               type="text" 

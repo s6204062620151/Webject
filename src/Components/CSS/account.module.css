@@ -52,6 +52,10 @@
         padding: 0.1rem;
     }
 
+    .button > label {
+        color: blue;
+    }
+
     .name {
         display: none;
     }
