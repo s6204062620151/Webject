@@ -76,12 +76,19 @@ function Shopdetail() {
               <div>{"Color: "+productselected.color}</div>
               <div>
                 <input
-                  type='number'
-                  min="1"
-                  max="99"
-                  value={totalquantity}
-                  onChange={(e) => setTotalquantity(e.target.value)}
-                />
+                    type='number'
+                    min="1"
+                    max="99"
+                    value={totalquantity}
+                    onChange={(e) => {
+                      const newValue = parseInt(e.target.value, 10);
+                      if (newValue < 1) {
+                        setTotalquantity(1);
+                      } else {
+                        setTotalquantity(newValue);
+                      }
+                    }}
+                 />
               </div>
               <div className={style.addtocart} onClick={() => postProductcart(productselected.productid, productselected.price)}> 
                 Add To Cart

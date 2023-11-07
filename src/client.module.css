@@ -15,7 +15,8 @@ a {
 .container {
   display: flex;
   flex-direction: column;
-  position: relative;
+  display: flex;
+  flex: 1;
 }
 .navbar {
 }
@@ -28,7 +29,6 @@ a {
 }
 
 .footer {
-    position: absolute;
     height: auto;
     bottom: 0;
     width: 100%;
