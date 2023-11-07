@@ -93,7 +93,6 @@ function Cart() {
           </tbody>
         </table>
       </div>
-
       <div className={style.submitbtn}>
             <button onClick={() => confirm()}>Confirm Order</button>
       </div>

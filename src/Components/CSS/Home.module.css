@@ -3,12 +3,21 @@
     flex-direction: column;
 }
 
+.header {
+    font-size: 45px;
+    padding: 2rem 1rem;
+}
+
+.labelname {
+    font-size: 20px;
+}
+
 .topSell{
     display: flex;
     justify-content: center;
     text-align: center;
-    width: 25rem;
-    height: 10rem;
+    width: 70%;
+    height: 80%;
 }
 
 
@@ -26,25 +35,25 @@
     height: 80%;
 }
 
-.containerProduct{
+.containerProduct {
     text-align: center;
 }
-.containerProduct img{
+.containerProduct img {
     width: 60%;
     height: 80%;
 }
 
-.bestsell .labelname{
+.bestsell .labelname {
     font-size: 0.625rem;
     font-weight: bold;
 }
 
-.categories{
-    width: 25rem;
+.categories {
+    width: 100%;
     height: auto;
 }
 
-.categories .categorybar .categoryChoice{
+.categories .categorybar .categoryChoice {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,21 +64,24 @@
 
 .categoryChoice:hover , .bestsell:hover, .product img:hover{
     cursor: pointer;
-    color: red;
+    color: rgb(255, 92, 92);
 }
 
 .categorybar{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
 }
+
+
 .categoryChoice img{
-    width: 60%;
+    width:80%;
     height: 80%;
 }
 
 .containerProduct{
-    width: 25rem;
-    height: 40rem;
+    width: 60;
+    height: 50%;
 }
 
 .showProduct{
@@ -79,6 +91,104 @@
     grid-template-columns: auto auto auto;
 }
 
-.header {
-    padding-bottom: 1.5rem;
+.product img {
+    width:60%;
+    height: 80%;
+}
+
+.categoriesname {
+    font-size: 20px;
+}
+
+
+@media screen and (max-width:480px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .topSell{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 25rem;
+        height: 10rem;
+    }
+    
+    
+    .topSell .bestsell {
+        width: 80%;
+        height: 80%;
+        margin-right: 0.625rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bestsell img{
+        width: 60%;
+        height: 80%;
+    }
+    
+    .containerProduct{
+        text-align: center;
+    }
+    .containerProduct img{
+        width: 60%;
+        height: 80%;
+    }
+    
+    .bestsell .labelname{
+        font-size: 0.625rem;
+        font-weight: bold;
+    }
+    
+    .categories{
+        width: 25rem;
+        height: auto;
+    }
+    
+    .categories .categorybar .categoryChoice{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+    }
+    
+    .categoryChoice:hover , .bestsell:hover, .product img:hover{
+        cursor: pointer;
+        color: rgb(255, 92, 92);
+    }
+    
+    .categorybar{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    .categoryChoice img{
+        width: 85%;
+        height: 80%;
+    }
+    
+    .containerProduct{
+        width: 25rem;
+        height: 40rem;
+    }
+    
+    .showProduct{
+        width: 100%;
+        height: 60%;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    
+    .header {
+        font-size: 18px;
+        padding-bottom: 1.5rem;
+    }
+
+    .categoriesname {
+        font-size: 11px;
+    }
 }

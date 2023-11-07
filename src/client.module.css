@@ -20,15 +20,17 @@ a {
 .navbar {
 }
 .content {
-  display: flex;
+  /* display: flex; */
+  flex: 10;
   justify-content: center;
   align-items: center;
   height: auto;
   margin-top: 0.625rem;
+  
 }
 
 .footer {
-    position: absolute;
+    /* position: absolute; */
     height: auto;
     bottom: 0;
     width: 100%;

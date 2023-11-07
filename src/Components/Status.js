@@ -75,9 +75,7 @@ function Status() {
               
               {cart.payment_status === "no" ? (
                   <td className={style.tdButton}>
-                    <div className={style.statusBtn}>
-                      <button onClick={() => selectedpayment(cart.cartid)}>Selected</button>
-                    </div>
+                    <button onClick={() => selectedpayment(cart.cartid)}>Selected</button>
                   </td> 
                 ):(
                   <td>DONE</td>

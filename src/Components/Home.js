@@ -117,81 +117,81 @@ const Home = () => {
 
   return (
     <div className={style.container}>
-      <div className={style.header}>Top seller<hr/></div>
+      <div className={style.header}>TOP SELLER FOR YOU<hr/></div>
       <div className={style.topSell}>
           <div className={style.bestsell} onClick={() => selectedproduct(bestsellproduct.id1)}>
             <img src={'./Image/image/'+bestproductimg.picture1} alt={`${bestsellproduct.name1} Image`} className={style.img}/>            
-            <div className={style.labelname}>No.1 {bestsellproduct.name1}</div>
+            <div className={style.categoriesname}>No.1 {bestsellproduct.name1}</div>
           </div>
           <div className={style.bestsell} onClick={() => selectedproduct(bestsellproduct.id2)}>
             <img src={'./Image/image/'+bestproductimg.picture2} alt={`${bestsellproduct.name2} Image`} className={style.img}/>
-            <div className={style.labelname}>No.2 {bestsellproduct.name2}</div>
+            <div className={style.categoriesname}>No.2 {bestsellproduct.name2}</div>
           </div>
           <div className={style.bestsell} onClick={() => selectedproduct(bestsellproduct.id3)}>
             <img src={'./Image/image/'+bestproductimg.picture3} alt={`${bestsellproduct.name3} Image`} className={style.img}/>
-            <div className={style.labelname}>No.3 {bestsellproduct.name3}</div>
+            <div className={style.categoriesname}>No.3 {bestsellproduct.name3}</div>
           </div>
       </div>
 
       <div className={style.categories}>
-        <div className={style.header}>Categories<hr/></div>
+        <div className={style.header}>CATEGORIES<hr/></div>
         <div className={style.categorybar}>
           <div className={style.categoryChoice} onClick={categorydress}>
             <img src='./Image/image/dress/dress-1.jpeg' alt={`dress Image`}/>
-            <div>Dress</div>
+            <div className={style.categoriesname}>Dress</div>
           </div>
           <div className={style.categoryChoice} onClick={categorypajamas}>
             <img src='./Image/image/long pant/long-pant-1.jpeg' alt={`Pajamas Image`}/>
-            <div>Pajamas</div>
+            <div className={style.categoriesname}>Pajamas</div>
           </div>
           <div className={style.categoryChoice} onClick={categoryhoddie}>
             <img src='/Image/image/hoodie set/hoodie-set-1.jpeg' alt={`Hoddie Image`}/>
-            <div>Hoddie</div>
+            <div className={style.categoriesname}>Hoddie</div>
           </div>
           <div className={style.categoryChoice} onClick={categorylegging}>
             <img src='/Image/image/long pant/long-pant-2.jpeg' alt={`Legging Image`}/>
-            <div>Legging</div>
+            <div className={style.categoriesname}>Legging</div>
           </div>
           <div className={style.categoryChoice} onClick={categorybag}>
             <img src='/Image/image/bag/bag-1.jpeg' alt={`Bag Image`}/>
-            <div>Bag</div>
+            <div className={style.categoriesname}>Bag</div>
           </div>
           <div className={style.categoryChoice} onClick={categoryclothes}>
             <img src='/Image/image/clothes set/clothes-set-1.jpg' alt={`Clothes Image`}/>
-            <div>Clothes set</div>
+            <div className={style.categoriesname}>Clothes set</div>
           </div>
           <div className={style.categoryChoice} onClick={categorycoat}>
             <img src='/Image/image/coat/coat-1.jpeg' alt={`Coat Image`}/>
-            <div>Coat</div>
+            <div className={style.categoriesname}>Coat</div>
           </div>
           <div className={style.categoryChoice} onClick={categoryhat}>
             <img src='/Image/image/hat/hat-1.jpeg' alt={`Hat Image`}/>
-            <div>Hat</div>
+            <div className={style.categoriesname}>Hat</div>
           </div>
           <div className={style.categoryChoice} onClick={categorylongpant}>
             <img src='/Image/image/long pant/long-pant-1.jpeg' alt={`Long pant Image`}/>
-            <div>Long pant</div>
+            <div className={style.categoriesname}>Long pant</div>
           </div>
           <div className={style.categoryChoice} onClick={categorypant}>
             <img src='/Image/image/pant/pant-1.jpeg' alt={`Pant Image`}/>
-            <div>Pant</div>
+            <div className={style.categoriesname}>Pant</div>
           </div>
           <div className={style.categoryChoice} onClick={categoryshirt}>
             <img src='/Image/image/shirt/shirt-1.png' alt={`Shirt Image`}/>
-            <div>Shirt</div>
+            <div className={style.categoriesname}>Shirt</div>
           </div>
           <div className={style.categoryChoice} onClick={categorysweater}>
             <img src='/Image/image/sweater/sweater-1.jpeg' alt={`Sweater Image`}/>
-            <div>Sweater</div>
+            <div className={style.categoriesname}>Sweater</div>
           </div>
           <div className={style.categoryChoice} onClick={categorytshirt}>
             <img src='/Image/image/t-shirt/T-shirt-1.png' alt={`T-shirt Image`}/>
-            <div>T-shirt</div>
+            <div className={style.categoriesname}>T-shirt</div>
           </div>
         </div>
       </div>
 
-      <div className={style.header}>Products<hr/></div>
+      <div className={style.header}>PRODUCT YOU MAY LIKE<hr/></div>
       <div className={style.containerProduct}>
         <div className={style.showProduct}>
           <div className={style.product}>

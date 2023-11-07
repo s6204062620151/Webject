@@ -1,73 +1,106 @@
+@media screen and (min-width:481px) {
+    .productdetail{
+        display: flex;
+        padding-left:10%;
+        justify-content: center;
+        font-size: 20px;
+        width: 100rem;
+        height: 40rem;
+        margin-bottom: .625rem;
+    }
 
-.productdetail{
-    display: flex;
-    justify-content: center;
-    width: 35rem;
-    height: 20rem;
-    margin-bottom: .625rem;
-}
-.productimage{
-    width: 100%;
-    height: 100%;
-}
-.productimage img{
-    width: 60%;
-    height: 100%;
-    margin-right: 6.25rem;
-}
-.productdetail .detailes{
-    /* display: flex; */
-    text-align: center;
-    flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
-    width: 60%;
+    .detailes {
+        display: contents;
+        justify-content: center;
+    }
+
+    .productimage img{
+        width: 100%;
+        height: 100%;
+    }
+    .productdetail .detailes{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .productdetail{
+        padding-left: 30%;
+    }
+
+    .detailes > div {
+        padding-left: 2rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .detailes, .description{
+        background-color: #efeded;
+        width: 70rem;
+    }
+    .description{
+        margin-bottom: 3.125rem;
+    }
+
+    .addtocart {
+        display: flex;
+        padding-left: 2rem;
+        font-size: 20px;
+        height: 2rem;
+        width: 10rem;
+        color: rgb(255, 255, 255);
+        background-color: palevioletred;
+        border-radius: 10px;
+    }
+
+    .productall .oterproduct > img:first-child {
+        padding-left: 0;
+    }
+
+    .productall {
+        display: flex;
+    }
+
+    .oterproduct > img{
+        display: flex;
+        padding: 0.5rem;
+        border: 1.5rem;
+        width: 7rem;
+        height: 10rem;
+    }
+    .numofproduct > input {
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        height:50px;
+        align-items: center;
+        font-size:20px;
+        padding-left: 1rem;
+        border-radius: 25px;
+        border-width: 0.1rem;
+
+    }
+    .otherheader {
+        font-size: 30px;
+    }
+
+    .oterproduct > img{
+        display: flex;
+        width: 50%;
+        height: 80%;
+    }
 }
 
-.detailes, .description{
-    background-color: #efeded;
-}
-.description{
-    margin-bottom: 3.125rem;
-}
-
-.addtocart {
-    margin-top: 0.625rem;
-    background-color: pink;
-    width: 100%;
-    border-radius: 25px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.productall .oterproduct > img:first-child {
-    padding-left: 0;
-}
-
-.productall {
-    display: flex;
-}
-
-.oterproduct > img{
-    display: flex;
-    padding: 0.5rem;
-    border: 1.5rem;
-    width: 7rem;
-    height: 10rem;
-}
  
 @media screen and (max-width:480px) {
 
     .productdetail{
         display: flex;
         justify-content: center;
-        width: 35rem;
         height: 20rem;
         margin-bottom: .625rem;
     }
 
     .productimage img{
-        padding-left: 3.5rem;
+        padding-left: 1rem;
         width: 100%;
         height: 100%;
     }
@@ -79,8 +112,8 @@
     .detailes > div {
         display: flex;
         padding: 0.5rem;
-        /* padding-left : 1rem; */
-        /* justify-content: left; */
+        padding-left : 1rem; 
+        justify-content: left; 
         
     }
 
@@ -95,10 +128,10 @@
     }
 
     .addtocart {
+        display: flex;
+        justify-content: center;
         font-size: 11px;
         height: auto;
-        align-items: center;
-        justify-content: center;
         color: rgb(255, 255, 255);
         background-color: palevioletred;
         width: fit-content;
@@ -111,12 +144,12 @@
         align-items: center;
     }
 
-    .description {
-        padding: 2rem 5rem;
+    .detailes, .description{
+        background-color: #efeded;
     }
 
-    .otherproduct > div {
-        padding-left: 2rem;
+    .description {
+        padding: 2rem 5rem;
     }
 
     .productall > .oterproduct{
@@ -127,5 +160,17 @@
 
     .otherheader > div {
         padding-left: 0.6rem;
+    }
+
+    .productall {
+        display: flex;
+    }
+
+    .oterproduct > img{
+        display: flex;
+        padding: 0.5rem;
+        border: 1.5rem;
+        width: 7rem;
+        height: 10rem;
     }
 }

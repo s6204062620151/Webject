@@ -22,11 +22,7 @@
     font-size: 20px;
     margin-bottom: 1.563rem;
 }
-/* .signinbtn{
-    background-color: #1B1B45;
-    color: white;
-    border-radius: 1.875rem;
-} */
+
 .signupref{
     font-size: 0.688rem;
 }
@@ -62,7 +58,8 @@
     align-items: center;
 }
 
-.signinbtn {
+.signinbtn  {
+    justify-content: center;
     font-family: 'Poppins', sans-serif;
     padding:0.5rem;
     border-radius: 25px;

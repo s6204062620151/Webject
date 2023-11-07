@@ -13,22 +13,25 @@
     align-items: center; 
 }
 
-/* .inputSearch input {
-    width: 20rem;
+.inputSearch input {
+    width: 40rem;
+    height: 40px;
     padding: 0.5rem 1rem;
     margin: 0;
     box-sizing: border-box;
     border-radius: 25px;
     border-color: palevioletred;
+    border-width: 0.1rem;
     outline: none;
-} */
+} 
 
-/* .inputSearch button {
+.inputSearch button {
     font-family: 'Poppins', sans-serif;
     padding: 0.75rem;
+    border-width: 0.1rem;
     margin: 1.5rem;
     border-radius: 25px;
-} */
+}
 
 .logo {
     width: 5rem;

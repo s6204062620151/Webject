@@ -1,3 +1,8 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
 table, th, td {
     padding: 0.2rem;
     border: 0.063rem groove rgb(204, 204, 204);
@@ -15,11 +20,30 @@ table{
 }
 
 .header{
-    margin-bottom: 0.625rem;
+    font-size: 50px;
+    padding: 2rem;
 }
 
 th {
     background-color:pink;
+}
+
+.submitbtn > button {
+    font-family: 'Poppins', sans-serif;
+    background-color: pink;
+    color: rgb(0, 0, 0);
+    border-radius: 25px;
+    border:none;
+    padding: 0.5rem;
+}
+
+.cartBtn > button {
+    font-family: 'Poppins', sans-serif;
+    border-width: 0.1rem;
+    border-radius: 20px;
+    border: none;
+    padding:0.5rem;
+    background-color: antiquewhite;
 }
 
 /* moblie */

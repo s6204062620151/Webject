@@ -54,9 +54,9 @@
     margin-top: 4rem;
 }
 
-@media screen and (max-width:480px){
+/* @media screen and (max-width:480px){
 
-        /* .container {
+        .container {
             background: #868686;
             color: aliceblue;
             display: flex;
@@ -74,6 +74,6 @@
         }
         .secondcolumn .footnav > ul ,.thirdcolumn .accountnav > ul {
             display: none;
-        } */
+        }
 
-}
+} */

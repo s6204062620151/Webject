@@ -11,7 +11,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     list-style-type: none;
-    padding-right: 2rem;
+    padding-right: 6rem;
 }
 
 .navlink {
@@ -58,7 +58,7 @@ a {
 
 .dropdownmenu{
     position: absolute;
-    top: 10rem;
+    top: 12rem;
 }
 
 .accountmanage{

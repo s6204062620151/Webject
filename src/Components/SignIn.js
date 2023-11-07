@@ -69,7 +69,6 @@ function SignIn() {
         You don't have an account yet?
         <Link to="/SignUp">sign up</Link>
       </div>
-
     </div>
   )
 }
