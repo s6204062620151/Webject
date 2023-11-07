@@ -78,8 +78,8 @@ function Client() {
               <Route path="/searchproduct/:searchkey" Component={Searchproduct}/>
               <Route path="/ordercheck/:userid/:cartid/:from" Component={Ordercheck}/>
             </Routes>
-            <div className={style.footer}><Footer/></div>
           </div>
+          <div className={style.footer}><Footer/></div>
         </div>
       )}
     </div>

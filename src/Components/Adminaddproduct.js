@@ -2,6 +2,7 @@ import React ,{useState}from 'react'
 import { UploadOutlined } from '@ant-design/icons';
 import { Form,Input,Button,Upload,Radio,message, Select } from 'antd';
 import axios from 'axios';
+import './CSS/Admin.css'
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -48,13 +49,14 @@ const Adminaddproduct = () => {
   };
 
   return (
-    <div className='content'>
+    <div>
       <div className='incontent'>
         <Form
           form={form}
           onFinish={onFinish}
           labelCol={{span: 6}}
-          wrapperCol={{span: 14}}        
+          wrapperCol={{span: 14}}   
+          style={{ padding: '16px' }}     
         >
           <Form.Item name="name"
             label="Name Product"
@@ -156,9 +158,11 @@ const Adminaddproduct = () => {
             </Upload>
           </Form.Item>
 
-          <Button type='primary' htmlType='submit'>
-            Submit
-          </Button>
+          <Form.Item wrapperCol={{ span: 24, offset: 10 }}>
+            <Button type='primary' htmlType='submit'>
+              Submit
+            </Button>
+          </Form.Item>
 
         </Form>        
 

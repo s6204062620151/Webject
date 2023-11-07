@@ -12,7 +12,6 @@ function SignIn() {
   axios.defaults.withCredentials = true;
   const SignIn = async (e) =>{
     e.preventDefault();
-    
     try{
       const response = await axios.post('http://localhost:3001/signin', {
         email: email,
@@ -21,8 +20,7 @@ function SignIn() {
       // console.log(response.data.token);
       // console.log(response.data.exp);
       if(response.data.message === "SignIn Successful!"){
-        //console.log(1)
-        //localStorage.setItem('token', response.data.token);
+        localStorage.setItem('token', response.data.token);
         //console.log(2)
         alert(response.data.message);
       }

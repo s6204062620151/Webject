@@ -69,6 +69,7 @@ a {
 @media screen and (max-width:480px) {
     .Nav {
         background: #c0c0c0;
+        width: auto;
         margin: 0 auto;
     }
     .Navmenu {

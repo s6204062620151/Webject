@@ -68,25 +68,21 @@ const Adminhome = () => {
 
     
   return (
-    <div className='content'>
+    <div>
       <div className='chart'>
         <h2>Monthly Sale</h2>
-        <Bar data={chartData} options={options} />
+          <Bar data={chartData} options={options} />
       </div>
       <div className='card-container'>
-
         <div className='card'>
-            <h2>Top Products : {bestproduct.name}</h2>
+          <h2>Top Products : {bestproduct.name}</h2>
         </div>
-
         <div className='card'>
-            <h2>Total Products : {bestproduct.sumquantity} Unit</h2>
-        </div>
-
+          <h2>Total Products : {bestproduct.sumquantity} Unit</h2>
+          </div>
         <div className='card'>
-            <h2>Total Sales : {bestproduct.total_quantity} Unit</h2>
+          <h2>Total Sales : {bestproduct.total_quantity} Unit</h2>
         </div>
-        
       </div>
     </div>
   )

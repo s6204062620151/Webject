@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table,Form,Button } from 'antd';
+import { Table,Form,Button, Modal } from 'antd';
 import axios from 'axios';
 import './CSS/Admin.css'
 
@@ -7,6 +7,8 @@ const Adminorderlists = () => {
 
   const [data, setData] = useState([]);
   const [showpicture, setShowpicture] = useState('');
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);  
 
   useEffect(() => {
     fectedData();
@@ -54,11 +56,15 @@ const Adminorderlists = () => {
     });
   }
   const handleShowpayment = (picture) => {
-    // console.log(picture);
+    setIsModalVisible(true);
     setShowpicture(picture);
     if(showpicture!==''){
       setShowpicture('');
     }
+  }
+  const closeModal = () => {
+    setIsModalVisible(false);
+    setSelectedProduct(null);
   }
 
   const columns = [
@@ -75,12 +81,13 @@ const Adminorderlists = () => {
         <div>
           {record.qr_picture !== '' ?(
             <div>
+              <Modal          
+              title="Payment Pic:"
+              visible={isModalVisible}
+              onCancel={closeModal}>
+              <img src={'./Image/user-upload/'+showpicture} className='payment_picture'/>
+              </Modal>
               <Button onClick={() => handleShowpayment(record.qr_picture)}>Show_Payment</Button>
-              {
-                showpicture !== ''?(
-                <img src={'./Image/user-upload/'+showpicture} className='payment_picture'/>
-                ):(null)
-              }
             </div>
           ):<div>Unuploaded</div>}
         </div>
@@ -120,9 +127,9 @@ const Adminorderlists = () => {
     
 
   return (
-    <div className='content'>
+    <div>
       <div className='incontent'>
-          <Table columns={columns} dataSource={data}/>
+        <Table columns={columns} dataSource={data} className="custom-table"/>
       </div>
     </div>
   )
