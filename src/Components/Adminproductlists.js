@@ -20,7 +20,7 @@ const Adminproductlists = () => {
   const fectedData = () => {
     axios.get('http://localhost:3001/productlists')
     .then((response) => {
-      setData(response.data);     // Update the data state with fetched data
+      setData(response.data); 
     })
     .catch((error) => {
       console.error('Error fetching data:', error);
@@ -146,7 +146,7 @@ const Adminproductlists = () => {
 
 
   return (
-    <div className='content'>
+    <div>
       <div className='incontent'>
         <Table columns={columns} dataSource={data}/>
         <Modal

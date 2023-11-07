@@ -12,14 +12,14 @@ function App() {
   return (
     <div className={style.container}>
         <div className={style.navbar}><Adminbar/></div>
-        <div className={style.content}>
-          <Routes>
-            <Route path="/" Component={Adminhome} />
-            <Route path="/Adminaddproduct" Component={Adminaddproduct} />
-            <Route path="/Adminproductlists" Component={Adminproductlists} />
-            <Route path="/Adminorderlists" Component={Adminorderlists} />
-          </Routes>
-        </div>
+          <main>
+            <Routes>
+              <Route path="/" Component={Adminhome} />
+              <Route path="/Adminaddproduct" Component={Adminaddproduct} />
+              <Route path="/Adminproductlists" Component={Adminproductlists} />
+              <Route path="/Adminorderlists" Component={Adminorderlists} />
+            </Routes>
+          </main>
     </div>
   );
 }
