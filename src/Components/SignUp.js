@@ -70,8 +70,7 @@ const SignUp = () => {
             <input 
               type="email" 
               id="signup-email" 
-              pattern='[0-9a-z_]+@(gmail|hotmail|outlook)(\.com|\.co.th)'
-              // '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'               
+              pattern='[a-zA-Z0-9-_]+@(gmail|hotmail|outlook)+(\.com|\.co.th)'              
               title='' 
               placeholder='@gmail.com'
               required 
@@ -83,8 +82,7 @@ const SignUp = () => {
             <input 
               type="password" 
               id="signup-password" 
-              pattern='[a-z]{4}[0-9]{4}'
-              // '(?=.*[A-Za-z])(?=.*\d).{8,}' 
+              pattern='(?=.*[A-Za-z])(?=.*\d).{8,}'
               title='' 
               placeholder='a-z จำนวน 4 ตัว และตัวเลข 4 ตัว'
               required
