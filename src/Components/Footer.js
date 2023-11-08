@@ -7,7 +7,7 @@ import style from './CSS/footer.module.css';
 
 function Footer() {
   return (
-    <div className={style.container}>
+    <footer className={style.container}>
         <div className={style.firstcolumn}>
             <div className={style.title}>
                 <div className={style.contract}>contact us</div>
@@ -85,7 +85,7 @@ function Footer() {
                 
             </div>
         </div>
-    </div>
+    </footer>
   )
 }
 

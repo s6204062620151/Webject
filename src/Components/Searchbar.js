@@ -19,7 +19,7 @@ function Searchbar() {
       navigation(`/searchproduct/${searchkey}`)
     }
   return (
-    <div className={style.container}> 
+    <header className={style.container}> 
             <div  onClick={home}>
                 <img src={`${process.env.PUBLIC_URL}/Image/logo.jpg`} className={style.logo}></img>
                 </div>
@@ -33,7 +33,7 @@ function Searchbar() {
                   </button>
                 </div> 
             </div>
-    </div>
+    </header>
   )
 }
 export default Searchbar
