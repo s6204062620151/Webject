@@ -139,7 +139,7 @@ const Adminaddproduct = () => {
               <Option value="pajamas">Pajamas</Option>
               <Option value="shirt">Shirt</Option>
               <Option value="long pant">Long Pant</Option>
-              <Option value="hoddie set">Hoddie</Option>
+              <Option value="hoodie set">Hoddie</Option>
               <Option value="pant">Pants</Option>
               <Option value="-">-</Option>
             </Select>
